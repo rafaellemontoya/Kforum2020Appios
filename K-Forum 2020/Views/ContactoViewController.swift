@@ -1,49 +1,52 @@
 //
-//  ViewController.swift
+//  ContactoViewController.swift
 //  K-Forum 2020
 //
-//  Created by Rafael Montoya on 10/28/19.
+//  Created by Rafael Montoya on 31/10/19.
 //  Copyright © 2019 Administra Servicios Integrales. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ContactoViewController: UIViewController {
+    
     struct Info: Codable {
         let email: String
-        let password: String
+        let nombre: String
+        let mensaje: String
     }
-    var asistente: Asistente?
-
-    @IBOutlet weak var emailLB: UITextField!
-    
-    @IBOutlet weak var passwordTF: UITextField!
-    
-    @IBAction func loginBTN(_ sender: Any) {
-        
-        login()
-        
+    struct Respuesta: Decodable {
+        let respuesta: String
     }
 
+    @IBOutlet weak var nombreTF: UITextField!
+    
+    @IBOutlet weak var emailTF: UITextField!
+    
+    @IBOutlet weak var mensajeTF: UITextView!
+    
+    @IBAction func enviarBTN(_ sender: Any) {
+        enviar()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        emailLB.text = "ismael.gonzalez@e-administra.com"
-        passwordTF.text = "Kforum2020"
-        login()
     }
     
-    
-    func login(){
+
+
+    func enviar(){
         let session = URLSession.shared
-                   let url = URL(string: "https://www.kforum2020.com/backend/apps/login_user.php")!
+                   let url = URL(string: "https://www.kforum2020.com/backend/apps/contact_mail.php")!
                    var request = URLRequest(url: url)
                    request.httpMethod = "POST"
                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                    request.setValue("Powered by Swift!", forHTTPHeaderField: "X-Powered-By")
         
-        let info = Info(email: emailLB.text!, password: passwordTF.text!)
+        let info = Info(email: emailTF.text!, nombre: nombreTF.text!,mensaje: mensajeTF.text!)
             
         guard let uploadData = try? JSONEncoder().encode(info) else {
         return
@@ -55,7 +58,7 @@ class ViewController: UIViewController {
                   print(dataString)
                   
                   let decoder = JSONDecoder()
-                  guard let asistente = try? decoder.decode(Asistente.self, from: data) else {
+                  guard let respuesta = try? decoder.decode(Respuesta.self, from: data) else {
                       self.noEncontrado()
                       return
                   }
@@ -64,12 +67,12 @@ class ViewController: UIViewController {
                   DispatchQueue.main.async(execute: {
                       
                       /// code goes here
-                      if(asistente.estado == "0"){
+                      if(respuesta.respuesta == "0"){
                           print("No encontrado")
                           self.noEncontrado()
-                      }else if(asistente.estado == "1"){
-                        self.asistente = asistente
-                        self.loginCorrecto(asistente:asistente)
+                      }else if(respuesta.respuesta == "1"){
+                       
+                        self.emailEnviado()
 
                           
                       }
@@ -83,30 +86,26 @@ class ViewController: UIViewController {
           task.resume()
         
         
+    }
+       func noEncontrado(){
+            
+    //        UIApplication.shared.endIgnoringInteractionEvents()
+            
+        }
+    func emailEnviado(){
+        let alert = UIAlertController(title: "Message sent succesfully", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            //regreso a la pantalla anterior
+            
+            
+            
+        }))
         
+        self.present(alert, animated: true, completion: nil)
+        // dispatch to main thread to stop activity indicator
         
         
     }
-    func loginCorrecto(asistente: Asistente){
-        
-      
-        self.performSegue(withIdentifier: "loginCorrecto", sender: self)
-    }
-    func noEncontrado(){
-        
-//        UIApplication.shared.endIgnoringInteractionEvents()
-        
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let barViewControllers = segue.destination as! UITabBarController
-        let destinationViewController = barViewControllers.viewControllers?[0] as! InicioViewController
-        destinationViewController.asistente = asistente!
-
-        // access the second tab bar
-       
-    }
-
-
 
 }
-
