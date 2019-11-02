@@ -10,10 +10,22 @@ import UIKit
 
 class SpeakerSeleccionadoViewController: UIViewController {
 
+    var speaker: Speaker?
+    
+    @IBOutlet weak var imagen: UIImageView!
+    
+    @IBOutlet weak var texto: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let url = URL(string: speaker!.plecaSpeaker)
+        let data = try? Data(contentsOf: url!)
+        self.imagen.image = UIImage(data: data!)
+        
+        texto.text = speaker?.biografia
+        
     }
     
 

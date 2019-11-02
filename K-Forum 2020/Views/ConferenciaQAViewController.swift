@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ConferenciaQAViewController: UIViewController {
-    
+    var db: Firestore!
+    let coleccion = "qa"
+    var qaSeleccionada = ConferenciaQAP()
     var array:  [ConferenciaQAP] = []
     
     @IBOutlet weak var tabla: UITableView!
@@ -17,16 +20,50 @@ class ConferenciaQAViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Firestore.firestore().settings = FirestoreSettings()
+                  // [END setup]
+           db = Firestore.firestore()
+
         tabla.delegate = self
         tabla.dataSource = self
         loadData()
     }
     
     func loadData(){
-        array.append(ConferenciaQAP(id: "id", nombre: "Conf 1", hora: "", estado: 1,quap: 1, orden: 1))
-        array.append(ConferenciaQAP(id: "id", nombre: "Conf 2", hora: "", estado: 0,quap: 1, orden: 1))
-        
-        }
+         db.collection(coleccion).order(by: "orden").addSnapshotListener{(querySnapshot, err) in
+                        if let err = err{
+                            print("Error obteniendo documentos \(err)")
+                            
+                        }else{
+                            self.array=[]
+                            for document in querySnapshot!.documents{
+                                
+                                if(document.data()["estado"]as? Int != -1){
+                                    let seleccionado = ConferenciaQAP()
+                                    seleccionado.id = document.documentID
+                                    if let nombre = document.data()["nombre_conferencia"]as? String{
+                                        seleccionado.nombre = nombre
+                                    }
+                                    if let estado = document.data()["estado"]as? Int{
+                                        seleccionado.estado = estado
+                                    }
+                                    if let orden = document.data()["orden"]as? Int{
+                                        seleccionado.orden = orden
+                                    }
+                                    
+                                    self.array.append(seleccionado)
+                                }//if -1
+                               
+                            }//for
+                           self.tabla.reloadData()
+                            
+                        }//else
+                        
+                    }//snapshot
+                   
+                    self.tabla.reloadData()
+               
+           }//load data
     
 
     
@@ -45,7 +82,12 @@ extension ConferenciaQAViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.qaSeleccionada = array[indexPath.row]
         performSegue(withIdentifier: "qaSeleccionadaSG", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let receiver = segue.destination as! QASeleccionadaViewController
+               receiver.qa = self.qaSeleccionada
     }
     
     

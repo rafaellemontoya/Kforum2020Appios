@@ -25,6 +25,8 @@ class AvisosTableViewCell: UITableViewCell {
     }
     func agregarCelda(item: Aviso){
         self.texto.text = item.texto
+        
+        
     }
 
 }

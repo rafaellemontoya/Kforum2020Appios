@@ -1,0 +1,6 @@
+framework module Pods_K_Forum_2020 {
+  umbrella header "Pods-K-Forum 2020-umbrella.h"
+
+  export *
+  module * { export * }
+}

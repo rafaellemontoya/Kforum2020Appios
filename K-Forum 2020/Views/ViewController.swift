@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     struct Info: Codable {
@@ -20,8 +21,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     
     @IBAction func loginBTN(_ sender: Any) {
+        if(emailLB.text != "" && passwordTF.text != ""){
+            loginFirebase(email: emailLB.text!, password: passwordTF.text!)
+        }else{
+            let alert = UIAlertController(title: "Please write your email and password", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+                //regreso a la pantalla anterior
+                
+                
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            // dispatch to main thread to stop activity indicator
+        }
         
-        login()
         
     }
 
@@ -31,11 +46,57 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         emailLB.text = "ismael.gonzalez@e-administra.com"
         passwordTF.text = "Kforum2020"
-        login()
+        
+        if (Auth.auth().currentUser != nil){
+            let email=Auth.auth().currentUser?.email
+            let password = "Kforum2020"
+            login(email: email!, password: password)
+        }
+        
+    }
+    func loginFirebase(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                 
+                 if let error = error {
+                     print(error)
+                     
+                     
+                     var titulo="Error"
+                     if(error.localizedDescription == "The password is invalid or the user does not have a password."){
+                         titulo="Contraseña incorrecta"
+                         
+                         
+                     }else if(error.localizedDescription == "The email address is badly formatted."){
+                         titulo="El email no es válido"
+                         
+                     }else if(error.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted."){
+                         titulo="Usuario no encontrado"
+        
+                     }
+                     
+                     
+                     let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
+                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                         NSLog("The \"OK\" alert occured.")
+                         //regreso a la pantalla anterior
+                         
+                         
+                         
+                     }))
+                     
+                     self.present(alert, animated: true, completion: nil)
+                 }
+                 else if let user = user {
+                     
+                    self.login(email: email, password: password)
+                     
+                     
+                 }
+             }
     }
     
     
-    func login(){
+    func login(email: String, password: String){
         let session = URLSession.shared
                    let url = URL(string: "https://www.kforum2020.com/backend/apps/login_user.php")!
                    var request = URLRequest(url: url)
@@ -43,7 +104,7 @@ class ViewController: UIViewController {
                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                    request.setValue("Powered by Swift!", forHTTPHeaderField: "X-Powered-By")
         
-        let info = Info(email: emailLB.text!, password: passwordTF.text!)
+        let info = Info(email: email, password: password)
             
         guard let uploadData = try? JSONEncoder().encode(info) else {
         return

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UberRides
+import CoreLocation
 
 class LugarViewController: UIViewController {
 
@@ -16,6 +18,17 @@ class LugarViewController: UIViewController {
     }
     
     @IBAction func uber(_ sender: Any) {
+//        let builder = RideParametersBuilder()
+//        let pickupLocation = CLLocation(latitude: 37.787654, longitude: -122.402760)
+//        let dropoffLocation = CLLocation(latitude: 37.775200, longitude: -122.417587)
+//        builder.pickupLocation = pickupLocation
+//        builder.dropoffLocation = dropoffLocation
+//        builder.dropoffNickname = "UberHQ"
+//        builder.dropoffAddress = "1455 Market Street, San Francisco, California"
+//        let rideParameters = builder.build()
+//
+//        let deeplink = RequestDeeplink(rideParameters: rideParameters, fallbackType: .mobileWeb)
+//        deeplink.execute()
     }
     
     @IBAction func waze(_ sender: Any) {

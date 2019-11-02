@@ -34,9 +34,12 @@ class DescargaTableViewCell: UITableViewCell {
         self.speaker.text = item.speaker
         
        }
-    func agregarCelda(item: Sepeaker){
-        self.imagen.image = item.imagen
+    func agregarCelda(item: Speaker){
+        
         self.titulo.text = item.nombre
+        let url = URL(string: item.imagenSpeaker)
+        let data = try? Data(contentsOf: url!)
+        self.imagen.image = UIImage(data: data!)
         self.speaker.text = item.titulo
     }
 }

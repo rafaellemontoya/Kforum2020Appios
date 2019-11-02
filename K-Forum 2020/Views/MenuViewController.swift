@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class MenuViewController: UIViewController {
         array.append(Menu(id:4,texto:"Contact us", imagen: UIImage(named: "11_contact-64")! ))
         array.append(Menu(id:5,texto:"Help", imagen: UIImage(named: "10_help-64")! ))
         array.append(Menu(id:6,texto:"Poll", imagen: UIImage(named: "12_poll-64")! ))
+        array.append(Menu(id:7,texto:"Log-out", imagen: UIImage(named: "12_poll-64")! ))
     }
     
 
@@ -68,6 +70,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
 
             case 6:
                 performSegue(withIdentifier: "pollSG", sender: self)
+        case 7:
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                print("sesion cerrada")
+                performSegue(withIdentifier: "logoutSG", sender: self)
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+                
+            }
+            
         default:
             print("hola")
         }

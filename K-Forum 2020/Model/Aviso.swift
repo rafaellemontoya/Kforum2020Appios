@@ -9,11 +9,18 @@
 import Foundation
 
 class Aviso {
-    var texto, id, url: String
+    var texto, id, url, color: String
     
     init(id: String,texto: String, url: String){
         self.id = id
         self.texto = texto
         self.url = url
+        self.color = "color"
+    }
+    init(){
+        self.id = ""
+        self.texto = ""
+        self.url = ""
+        self.color = ""
     }
 }

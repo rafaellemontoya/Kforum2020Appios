@@ -7,23 +7,71 @@
 //
 
 import UIKit
+import FirebaseFirestore
+
 
 class SpeakersViewController: UIViewController {
 
-    var array:  [Sepeaker] = []
+     var db: Firestore!
+    let coleccion = "speakers"
+    
+    var array:  [Speaker] = []
+    var speakerSeleccionado = Speaker()
     
     @IBOutlet weak var tabla: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        Firestore.firestore().settings = FirestoreSettings()
+        // [END setup]
+        db = Firestore.firestore()
+        
+        
         tabla.delegate = self
         tabla.dataSource = self
         loadData()
     }
     func loadData(){
-        array.append(Sepeaker(id: "id", nombre: "Guadalupe del Valle Perochena", titulo: "Global Futurist and Innovation Strategist", imagen: UIImage(named: "1_speakers-128-x-128")!))
-        array.append(Sepeaker(id: "id", nombre: "Antonio del Valle Ruíz", titulo: "Lifetime Honorary Chairman of the Board of Directors of Kaluz", imagen: UIImage(named: "5_speakers-128-x-128")!))
+        
+        
+        db.collection(coleccion).order(by: "orden").addSnapshotListener{(querySnapshot, err) in
+             if let err = err{
+                 print("Error obteniendo documentos \(err)")
+                 
+             }else{
+                self.array=[]
+                 for document in querySnapshot!.documents{
+                     let seleccionado = Speaker()
+                    seleccionado.id = document.documentID
+                     
+                     if let titulo = document.data()["titulo"]as? String{
+                         seleccionado.titulo = titulo
+                     }
+                     if let nombre = document.data()["nombre"]as? String{
+                         seleccionado.nombre = nombre
+                     }
+                     if let imagen = document.data()["imagen"]as? String{
+                         seleccionado.imagenSpeaker = imagen
+                     }
+                    if let plecaSpeaker = document.data()["plecaSpeaker"]as? String{
+                         seleccionado.plecaSpeaker = plecaSpeaker
+                     }
+                    if let biografia = document.data()["biografia"]as? String{
+                        seleccionado.biografia = biografia
+                    }
+                    
+                     
+                    self.array.append(seleccionado)
+                 }
+                self.tabla.reloadData()
+                 
+             }
+             
+         }
+
+         self.tabla.reloadData()
      }
 
 
@@ -40,7 +88,13 @@ extension SpeakersViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.speakerSeleccionado = array[indexPath.row]
         performSegue(withIdentifier: "speakerSeleccionadoSG", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let receiver = segue.destination as! SpeakerSeleccionadoViewController
+        receiver.speaker = self.speakerSeleccionado
     }
     
     

@@ -11,11 +11,18 @@ import UIKit
 
 class Descarga {
     var titulo, speaker, url: String
-    var imagen: UIImage
+    var imagen: UIImage?
     init(titulo: String, speaker: String, url: String,imagen: UIImage) {
         self.titulo = titulo
         self.speaker = speaker
         self.url = url
         self.imagen = imagen
     }
+    init(){
+        self.titulo = ""
+        self.speaker = ""
+        self.url = ""
+        
+    }
+
 }

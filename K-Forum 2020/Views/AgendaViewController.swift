@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class AgendaViewController: UIViewController {
+    var db: Firestore!
     
+    var nombreReporteBD = ""
     
     var array:  [Agenda] = []
     var arrayDia2:  [Agenda] = []
     
     var arrayAcompananteDia1:  [Agenda] = []
+    var arrayAcompananteDia2:  [Agenda] = []
     var secciones: [String] = ["Dia 1", "Día 2"]
     
     var sectionData: [Int:[Agenda]] = [:]
+    let coleccion = "agenda"
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -33,8 +39,15 @@ class AgendaViewController: UIViewController {
         }
         
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let settings = FirestoreSettings()
+        nombreReporteBD = "";
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,37 +57,74 @@ class AgendaViewController: UIViewController {
         
     }
     func getInfoAcompanante(){
-        arrayAcompananteDia1.append(Agenda(id: 1, hora: "08:00", evento: " acompananrw")!)
-        arrayAcompananteDia1.append(Agenda(id: 2, hora: "09:00", evento: "Welcome")!)
+        db.collection(coleccion).whereField("participante", isEqualTo: 2).getDocuments(){(querySnapshot, err) in
+            if let err = err{
+                print("Error obteniendo documentos \(err)")
+                
+            }else{
+                
+                for document in querySnapshot!.documents{
+                    let seleccionado = Agenda()
+                    
+                    
+                    if let hora = document.data()["hora"]as? String{
+                        seleccionado.hora = hora
+                    }
+                    if let evento = document.data()["evento"]as? String{
+                        seleccionado.evento = evento
+                    }
+                    
+                    if(document.data()["dia"]as? Int == 1){
+                        self.arrayAcompananteDia1.append(seleccionado)
+                    }else{
+                        self.arrayAcompananteDia2.append(seleccionado)
+                    }
+                    
+                    
+                    
+                }
+                self.setInfoParticipante()
+                
+            }
+            
+        }
         
         
     }
     func getInfoParticipante(){
-        array.append(Agenda(id: 1, hora: "08:00", evento: "Registration Opens")!)
-        array.append(Agenda(id: 2, hora: "09:00", evento: "Welcome")!)
-        array.append(Agenda(id: 3, hora: "09:20", evento: "Leading Change Anders Sörman - Nilsson")!)
+        db.collection(coleccion).whereField("participante", isEqualTo: 1).getDocuments(){(querySnapshot, err) in
+            if let err = err{
+                print("Error obteniendo documentos \(err)")
+                
+            }else{
+                
+                for document in querySnapshot!.documents{
+                    let seleccionado = Agenda()
+                    
+                    
+                    if let hora = document.data()["hora"]as? String{
+                        seleccionado.hora = hora
+                    }
+                    if let evento = document.data()["evento"]as? String{
+                        seleccionado.evento = evento
+                    }
+                    
+                    if(document.data()["dia"]as? Int == 1){
+                        self.array.append(seleccionado)
+                    }else{
+                        self.arrayDia2.append(seleccionado)
+                    }
+                    
+                    
+                    
+                }
+                self.setInfoParticipante()
+                
+            }
+            
+        }
+       
         
-        
-        arrayDia2.append(Agenda(id: 1, hora: "08:00", evento: "Registration Opens")!)
-        arrayDia2.append(Agenda(id: 2, hora: "09:00", evento: "Welcome")!)
-        arrayDia2.append(Agenda(id: 3, hora: "09:20", evento: "Leading Change\nAnders Sörman - Nilsson")!)
-        
-        
-//        tableView.reloadData()
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
-//        array.append(Agenda(id: <#T##Int#>, hora: <#T##String#>, evento: <#T##String#>)!)
         setInfoParticipante()
         
     }
@@ -83,7 +133,7 @@ class AgendaViewController: UIViewController {
         tableView.reloadData()
     }
     func setInfoAcompanante(){
-        sectionData = [0:arrayAcompananteDia1,1:arrayDia2]
+        sectionData = [0:arrayAcompananteDia1,1:arrayAcompananteDia2]
         tableView.reloadData()
     }
 

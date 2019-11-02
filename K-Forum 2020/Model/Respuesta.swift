@@ -19,4 +19,10 @@ class Respuesta{
         self.idConferencia = idConferencia
         self.estatus = estatus
     }
+    init(){
+        self.id = ""
+        self.texto = ""
+        self.idConferencia = ""
+        self.estatus = 0
+    }
 }

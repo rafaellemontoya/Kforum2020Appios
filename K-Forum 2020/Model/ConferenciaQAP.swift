@@ -20,4 +20,12 @@ class ConferenciaQAP{
         self.quap = quap
         self.orden = orden
     }
+    init(){
+        self.id = ""
+        self.nombre = ""
+        self.hora = ""
+        self.estado = 0
+        self.quap = 0
+        self.orden = 0
+    }
 }
