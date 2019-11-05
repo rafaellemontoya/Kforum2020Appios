@@ -466,7 +466,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-dark" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-Dd-g5w">
                                                 <rect key="frame" x="87" y="50" width="240" height="152"/>
@@ -781,7 +781,7 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_ponentes_1200-x-600" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-Hi-Kue">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_ponentes_1200-x-600" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-Hi-Kue">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="207" id="TkV-oM-7zi"/>
@@ -818,91 +818,74 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juo-yH-Q6c">
-                                <rect key="frame" x="-20" y="-20" width="454" height="936"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfL-DB-tmF">
-                                        <rect key="frame" x="20" y="23" width="414" height="809"/>
-                                        <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lsu-i5-IGn">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="230" id="m4a-HV-JZ0"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pay-HP-0bd">
-                                                    <size key="itemSize" width="410" height="197"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaSlider" id="sSB-Xu-W5p" customClass="SliderCollectionViewCell" customModule="K_Forum_2020" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="15" width="410" height="200"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4i7-Dt-JZ1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="410" height="200"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-t7-j1h">
-                                                                    <rect key="frame" x="0.0" y="22" width="410" height="178"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="gpc-t7-j1h" firstAttribute="top" secondItem="4i7-Dt-JZ1" secondAttribute="top" constant="22" id="4Dj-hS-ipA"/>
-                                                                <constraint firstItem="gpc-t7-j1h" firstAttribute="leading" secondItem="4i7-Dt-JZ1" secondAttribute="leading" id="H5x-4E-7Nf"/>
-                                                                <constraint firstAttribute="bottom" secondItem="gpc-t7-j1h" secondAttribute="bottom" id="TXn-d3-BFa"/>
-                                                                <constraint firstAttribute="trailing" secondItem="gpc-t7-j1h" secondAttribute="trailing" id="hPW-PJ-YEl"/>
-                                                            </constraints>
-                                                        </collectionViewCellContentView>
-                                                        <size key="customSize" width="410" height="200"/>
-                                                        <connections>
-                                                            <outlet property="imagePerCell" destination="gpc-t7-j1h" id="wnV-85-ccc"/>
-                                                        </connections>
-                                                    </collectionViewCell>
-                                                </cells>
-                                                <connections>
-                                                    <outlet property="delegate" destination="7HU-u2-K0i" id="3wP-G6-XZ0"/>
-                                                </connections>
-                                            </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nombre asistente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4Q-Jc-qVF">
-                                                <rect key="frame" x="8" y="357" width="398" height="52"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Lsu-i5-IGn" secondAttribute="trailing" id="6UK-dL-GWq"/>
-                                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="top" secondItem="qfL-DB-tmF" secondAttribute="top" id="700-yT-Ufk"/>
-                                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="leading" secondItem="qfL-DB-tmF" secondAttribute="leading" id="RHr-uY-9Kz"/>
-                                        </constraints>
-                                    </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-de-no8">
-                                        <rect key="frame" x="107" y="244" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-de-no8">
+                                <rect key="frame" x="87" y="334" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="qfL-DB-tmF" secondAttribute="bottom" constant="104" id="IKm-ug-DaY"/>
-                                    <constraint firstAttribute="trailing" secondItem="qfL-DB-tmF" secondAttribute="trailing" constant="20" id="Qxa-ho-7aa"/>
-                                    <constraint firstItem="qfL-DB-tmF" firstAttribute="top" secondItem="dzl-ax-v4t" secondAttribute="top" constant="23" id="Tiy-k4-qHP"/>
-                                    <constraint firstItem="dzl-ax-v4t" firstAttribute="bottom" secondItem="qfL-DB-tmF" secondAttribute="bottom" constant="104" id="XFw-LL-41s"/>
-                                    <constraint firstItem="qfL-DB-tmF" firstAttribute="centerX" secondItem="juo-yH-Q6c" secondAttribute="centerX" id="bYn-6E-74c"/>
-                                    <constraint firstItem="qfL-DB-tmF" firstAttribute="leading" secondItem="dzl-ax-v4t" secondAttribute="leading" constant="20" id="rGO-Tg-ejn"/>
+                                    <constraint firstAttribute="height" constant="128" id="0rr-ig-42e"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="RdO-7B-2UQ"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="dzl-ax-v4t"/>
-                            </scrollView>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lsu-i5-IGn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="Dah-OX-pIw"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pay-HP-0bd">
+                                    <size key="itemSize" width="410" height="197"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaSlider" id="sSB-Xu-W5p" customClass="SliderCollectionViewCell" customModule="K_Forum_2020" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="15" width="410" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4i7-Dt-JZ1">
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-t7-j1h">
+                                                    <rect key="frame" x="0.0" y="22" width="410" height="178"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gpc-t7-j1h" secondAttribute="trailing" id="3Mk-OF-aKW"/>
+                                                <constraint firstItem="gpc-t7-j1h" firstAttribute="top" secondItem="4i7-Dt-JZ1" secondAttribute="top" constant="22" id="O0C-4K-GZC"/>
+                                                <constraint firstAttribute="bottom" secondItem="gpc-t7-j1h" secondAttribute="bottom" id="fZa-lg-UaW"/>
+                                                <constraint firstItem="gpc-t7-j1h" firstAttribute="leading" secondItem="4i7-Dt-JZ1" secondAttribute="leading" id="r2A-y8-DFy"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="410" height="200"/>
+                                        <connections>
+                                            <outlet property="imagePerCell" destination="gpc-t7-j1h" id="wnV-85-ccc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="7HU-u2-K0i" id="3wP-G6-XZ0"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre asistente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4Q-Jc-qVF">
+                                <rect key="frame" x="8" y="477" width="398" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="KN2-Et-yvS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="juo-yH-Q6c" firstAttribute="centerY" secondItem="6bE-g4-v5F" secondAttribute="centerY" id="EVp-Jg-JtZ"/>
-                            <constraint firstItem="juo-yH-Q6c" firstAttribute="leading" secondItem="6bE-g4-v5F" secondAttribute="leadingMargin" constant="-40" id="SAB-D2-YsA"/>
-                            <constraint firstItem="juo-yH-Q6c" firstAttribute="top" secondItem="6bE-g4-v5F" secondAttribute="topMargin" constant="-64" id="aGp-X5-XU7"/>
-                            <constraint firstItem="juo-yH-Q6c" firstAttribute="centerX" secondItem="6bE-g4-v5F" secondAttribute="centerX" id="zch-Cf-xnW"/>
+                            <constraint firstItem="xW6-Di-dlZ" firstAttribute="trailing" secondItem="O4Q-Jc-qVF" secondAttribute="trailing" constant="8" id="3pS-EN-zEf"/>
+                            <constraint firstItem="aA0-de-no8" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" constant="87" id="EIg-te-Pc5"/>
+                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="trailing" secondItem="xW6-Di-dlZ" secondAttribute="trailing" id="Mnk-39-PpQ"/>
+                            <constraint firstItem="O4Q-Jc-qVF" firstAttribute="top" secondItem="aA0-de-no8" secondAttribute="bottom" constant="15" id="QTy-De-rcM"/>
+                            <constraint firstItem="O4Q-Jc-qVF" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" constant="8" id="TsN-g5-yZc"/>
+                            <constraint firstItem="xW6-Di-dlZ" firstAttribute="trailing" secondItem="aA0-de-no8" secondAttribute="trailing" constant="87" id="bXm-Jb-NfY"/>
+                            <constraint firstItem="aA0-de-no8" firstAttribute="top" secondItem="Lsu-i5-IGn" secondAttribute="bottom" constant="60" id="mBl-sT-NRL"/>
+                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" id="yhQ-wt-ugd"/>
+                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="top" secondItem="xW6-Di-dlZ" secondAttribute="top" id="yrA-49-ZjH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xW6-Di-dlZ"/>
                     </view>
@@ -1009,9 +992,8 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ufk-Ed-tl9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ufk-Ed-tl9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="98" id="vbI-Uu-vjP" customClass="PerfilTableViewCell" customModule="K_Forum_2020" customModuleProvider="target">
@@ -1021,20 +1003,13 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Celda tipo 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m84-2o-dkr">
-                                                    <rect key="frame" x="48" y="11" width="346" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celda tipo 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m84-2o-dkr">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.0" green="0.74472314120000005" blue="0.83786565069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlB-Pu-wa6">
-                                                    <rect key="frame" x="8" y="5" width="32" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="7KJ-Qz-Z6R"/>
-                                                        <constraint firstAttribute="height" constant="32" id="pu4-g7-Rml"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrZ-xG-HNp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrZ-xG-HNp">
                                                     <rect key="frame" x="20" y="46" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1044,26 +1019,28 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="jrZ-xG-HNp" secondAttribute="trailing" constant="20" id="2TH-vR-NSg"/>
                                                 <constraint firstItem="jrZ-xG-HNp" firstAttribute="leading" secondItem="VEI-N3-a6a" secondAttribute="leading" constant="20" id="63w-9Z-VwE"/>
-                                                <constraint firstItem="m84-2o-dkr" firstAttribute="leading" secondItem="rlB-Pu-wa6" secondAttribute="trailing" constant="8" id="6Rx-j1-hEt"/>
-                                                <constraint firstItem="jrZ-xG-HNp" firstAttribute="top" secondItem="rlB-Pu-wa6" secondAttribute="bottom" constant="9" id="Hx9-gd-741"/>
                                                 <constraint firstItem="jrZ-xG-HNp" firstAttribute="top" secondItem="m84-2o-dkr" secondAttribute="bottom" constant="14" id="N8K-s2-8Ob"/>
+                                                <constraint firstItem="m84-2o-dkr" firstAttribute="leading" secondItem="VEI-N3-a6a" secondAttribute="leadingMargin" id="NFY-V7-0Xm"/>
                                                 <constraint firstAttribute="bottom" secondItem="jrZ-xG-HNp" secondAttribute="bottom" constant="31" id="Osy-TI-UzH"/>
                                                 <constraint firstAttribute="trailing" secondItem="m84-2o-dkr" secondAttribute="trailing" constant="20" id="P6H-Ej-Ed9"/>
-                                                <constraint firstItem="rlB-Pu-wa6" firstAttribute="top" secondItem="VEI-N3-a6a" secondAttribute="top" constant="5" id="QCr-7Y-sPp"/>
-                                                <constraint firstItem="rlB-Pu-wa6" firstAttribute="leading" secondItem="VEI-N3-a6a" secondAttribute="leading" constant="8" id="SWj-Xi-Tbz"/>
                                                 <constraint firstItem="m84-2o-dkr" firstAttribute="top" secondItem="VEI-N3-a6a" secondAttribute="top" constant="11" id="dQL-OZ-uGz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="contenido" destination="jrZ-xG-HNp" id="zlH-AE-ppf"/>
                                             <outlet property="encabezado" destination="m84-2o-dkr" id="qL4-HE-fH6"/>
-                                            <outlet property="imagen" destination="rlB-Pu-wa6" id="rmJ-1M-5Zt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ufk-Ed-tl9" firstAttribute="leading" secondItem="VC8-Dh-V2f" secondAttribute="leading" id="0lt-9g-8JO"/>
+                            <constraint firstItem="Ufk-Ed-tl9" firstAttribute="trailing" secondItem="VC8-Dh-V2f" secondAttribute="trailing" id="WHf-jU-qgJ"/>
+                            <constraint firstItem="Ufk-Ed-tl9" firstAttribute="top" secondItem="VC8-Dh-V2f" secondAttribute="top" id="mTk-0M-kOP"/>
+                            <constraint firstItem="Ufk-Ed-tl9" firstAttribute="bottom" secondItem="VC8-Dh-V2f" secondAttribute="bottom" id="sxz-ie-Sat"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VC8-Dh-V2f"/>
                     </view>
                     <navigationItem key="navigationItem" id="gob-Ch-E9C"/>
@@ -1073,7 +1050,7 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYq-l5-tzl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="2646"/>
+            <point key="canvasLocation" x="1792.753623188406" y="2645.7589285714284"/>
         </scene>
         <!--Conferencia Poll View Controller-->
         <scene sceneID="dZf-KX-0mt">

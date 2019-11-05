@@ -33,6 +33,7 @@
 		05929BF3236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF2236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift */; };
 		05929BF5236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF4236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift */; };
 		05929BF7236CA89F006EBBC2 /* Respuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF6236CA89F006EBBC2 /* Respuesta.swift */; };
+		0597628B236E0B1400855253 /* InformacionParticipante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597628A236E0B1400855253 /* InformacionParticipante.swift */; };
 		05AFF382236CFA6700DCFA3D /* QASeleccionadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AFF381236CFA6700DCFA3D /* QASeleccionadaViewController.swift */; };
 		05C32DB8236A4563005E5DE6 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C32DB7236A4563005E5DE6 /* Perfil.swift */; };
 		05C32DBA236A46EC005E5DE6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C32DB9236A46EC005E5DE6 /* PerfilViewController.swift */; };
@@ -79,6 +80,8 @@
 		05929BF2236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollSeleccionadaViewController.swift; sourceTree = "<group>"; };
 		05929BF4236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollSeleccionadaTableViewCell.swift; sourceTree = "<group>"; };
 		05929BF6236CA89F006EBBC2 /* Respuesta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respuesta.swift; sourceTree = "<group>"; };
+		0597628A236E0B1400855253 /* InformacionParticipante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionParticipante.swift; sourceTree = "<group>"; };
+		0597628C236E1B7700855253 /* K-Forum 2020.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "K-Forum 2020.entitlements"; sourceTree = "<group>"; };
 		05AFF381236CFA6700DCFA3D /* QASeleccionadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QASeleccionadaViewController.swift; sourceTree = "<group>"; };
 		05C32DB7236A4563005E5DE6 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		05C32DB9236A46EC005E5DE6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		0580E3C52367D1AA00A08638 /* K-Forum 2020 */ = {
 			isa = PBXGroup;
 			children = (
+				0597628C236E1B7700855253 /* K-Forum 2020.entitlements */,
 				05234B4B2369D8FA00628C81 /* Cells */,
 				05DA239A23691C6500A60B72 /* Views */,
 				05DA23922369105D00A60B72 /* Model */,
@@ -174,6 +178,7 @@
 				058C7C93236B6C4F00B4AAB2 /* Speaker.swift */,
 				05CEB3E8236C7D3B0029B2E2 /* ConferenciaQAP.swift */,
 				05929BF6236CA89F006EBBC2 /* Respuesta.swift */,
+				0597628A236E0B1400855253 /* InformacionParticipante.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				0519807E236A5D1C006154B6 /* AvisosTableViewCell.swift in Sources */,
 				053FEABC236A28F300632EB4 /* Menu.swift in Sources */,
 				05DA239E23693DBC00A60B72 /* AgendaViewController.swift in Sources */,
+				0597628B236E0B1400855253 /* InformacionParticipante.swift in Sources */,
 				05DA23942369107600A60B72 /* Login.swift in Sources */,
 				05D1E9A7236A4C0B001015BD /* PerfilTableViewCell.swift in Sources */,
 				05234B4D2369D91300628C81 /* AgendaTableViewCell.swift in Sources */,
@@ -513,8 +519,10 @@
 			baseConfigurationReference = AE6AD064C33C9DC69D259A96 /* Pods-K-Forum 2020.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "K-Forum 2020/K-Forum 2020.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5L2FG34SQ6;
 				INFOPLIST_FILE = "K-Forum 2020/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -522,9 +530,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.administra.kforum2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = KForum2020;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -535,8 +544,10 @@
 			baseConfigurationReference = D0DD3681E23753F2FE0B458C /* Pods-K-Forum 2020.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "K-Forum 2020/K-Forum 2020.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5L2FG34SQ6;
 				INFOPLIST_FILE = "K-Forum 2020/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -544,9 +555,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.administra.kforum2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = KForum2020;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

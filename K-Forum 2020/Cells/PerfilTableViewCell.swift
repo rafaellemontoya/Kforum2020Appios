@@ -10,7 +10,7 @@ import UIKit
 
 class PerfilTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imagen: UIImageView!
+    
     
     @IBOutlet weak var encabezado: UILabel!
     
@@ -28,7 +28,7 @@ class PerfilTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func agregarCelda(item: Perfil){
-        imagen.image = item.imagen
+        
         encabezado.text = item.encabezado
         contenido.text = item.valor
     }

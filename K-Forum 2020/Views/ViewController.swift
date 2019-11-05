@@ -44,8 +44,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        emailLB.text = "ismael.gonzalez@e-administra.com"
-        passwordTF.text = "Kforum2020"
+//        emailLB.text = "ismael.gonzalez@e-administra.com"
+//        passwordTF.text = "Kforum2020"
         
         if (Auth.auth().currentUser != nil){
             let email=Auth.auth().currentUser?.email

@@ -14,10 +14,10 @@ class Perfil{
     var id: Int
     var imagen: UIImage?
     
-    init(id: Int, valor: String, encabezado: String, imagen: UIImage){
+    init(id: Int, valor: String, encabezado: String){
         self.id = id
         self.valor = valor
         self.encabezado = encabezado
-        self.imagen = imagen
+        
     }
 }
