@@ -29,6 +29,9 @@ class LugarViewController: UIViewController {
 //
 //        let deeplink = RequestDeeplink(rideParameters: rideParameters, fallbackType: .mobileWeb)
 //        deeplink.execute()
+        
+        guard let url = URL(string: "https://www.waze.com/ul?ll=19.434855%2C-99.146284&navigate=yes&zoom=17") else { return }
+        UIApplication.shared.open(url)
     }
     
     @IBAction func waze(_ sender: Any) {

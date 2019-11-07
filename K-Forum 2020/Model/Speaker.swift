@@ -11,9 +11,9 @@ import UIKit
 
 class Speaker{
     var nombre, titulo, id,imagenSpeaker, plecaSpeaker, biografia: String
-
+    var imagen: UIImage?
     var orden: Int
-    init( id: String, nombre: String,titulo: String,imagen: String, pleca: String) {
+    init( id: String, nombre: String,titulo: String,imagen: String, pleca: String, img: UIImage) {
         self.titulo = titulo
         self.nombre = nombre
         self.id = id
@@ -21,6 +21,7 @@ class Speaker{
         self.plecaSpeaker = pleca
         self.orden = 0
         self.biografia = ""
+        self.imagen = img
     }
     init(){
         self.titulo = ""

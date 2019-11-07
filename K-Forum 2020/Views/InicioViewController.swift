@@ -19,13 +19,14 @@ class InicioViewController: UIViewController {
     
     let qrURL = "https://www.registro-eventos.com/core/2019/backend/qrgenerator/generate.php?text="
     
-    var imgArr: [String] = []
+    
 
     
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
     
     
     
+    
+    @IBOutlet weak var imagenHeader: UIImageView!
     @IBOutlet weak var qrImage: UIImageView!
     @IBOutlet weak var nombreAsistente: UILabel!
     
@@ -43,8 +44,7 @@ class InicioViewController: UIViewController {
         
         qrImage.image = UIImage(data: data!)
         
-        sliderCollectionView.delegate = self
-        sliderCollectionView.dataSource = self
+     
         nombreAsistente.text = asistente!.nombre+" " + asistente!.apellido
         loadData()
     }
@@ -58,48 +58,43 @@ class InicioViewController: UIViewController {
                             print("Error obteniendo documentos \(err)")
                             
                         }else{
-                            self.imgArr=[]
+                            
                             for document in querySnapshot!.documents{
                                 
                                 if(document.data()["estado"]as? Int != -1){
                                     print(document.documentID)
-
-                                    if let urlImg = document.data()["url"]as? String{
+//                                    print(document.data["url_img"])
+                                    if let urlImg = document.data()["imagen"]as? String{
                                         
-                                    self.imgArr.append(urlImg)
+                                    
+                                        let urlHeader = URL(string: urlImg)
+                                        let dataHeader = try? Data(contentsOf: urlHeader!)
+                                        self.imagenHeader.image = UIImage(data: dataHeader!)
+                                        
                                     }
+                                    if let estado = document.data()["estado"]as? Int{
+                                        print(estado)
+//                                    self.imgArr.append(estado)
+                                                                       }
+                                    
+                                    
                                 }//if -1
                                
                             }//for
-                           self.sliderCollectionView.reloadData()
+                           
                             
                         }//else
                         
                     }//snapshot
                    
-                    self.sliderCollectionView.reloadData()
+                    
                
            }//load data
     
 
 
 }
-extension InicioViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgArr.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celdaSlider", for: indexPath) as! SliderCollectionViewCell
-        let urlFormado = URL(string: imgArr[indexPath.row])
-        let dataImagen = try? Data(contentsOf: urlFormado!)
-        cell.imagePerCell.image = UIImage(data: dataImagen!)
-        
-        return cell
-    }
-    
-    
-}
+
 
     
 

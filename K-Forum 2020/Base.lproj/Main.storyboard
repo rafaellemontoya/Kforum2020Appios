@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,31 +12,32 @@
             <objects>
                 <viewController storyboardIdentifier="lugarVC" id="9Ub-2c-04K" customClass="LugarViewController" customModule="K_Forum_2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zII-rO-qms">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="946"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbY-93-d0A">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbY-93-d0A">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="912"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VG5-YV-bbq">
-                                        <rect key="frame" x="0.0" y="-44" width="414" height="888"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VG5-YV-bbq">
+                                        <rect key="frame" x="0.0" y="-44" width="414" height="1000"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hilton" translatesAutoresizingMaskIntoConstraints="NO" id="Mgj-wC-FBr">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hilton" translatesAutoresizingMaskIntoConstraints="NO" id="Mgj-wC-FBr">
                                                 <rect key="frame" x="0.0" y="44" width="414" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Award-winning hotel in the heart of Mexico City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2j-5w-Qe2">
-                                                <rect key="frame" x="8" y="252" width="398" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Award-winning hotel in the heart of Mexico City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2j-5w-Qe2">
+                                                <rect key="frame" x="8" y="252" width="387.5" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="9kk-f2-EEk"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-6B-Ire">
-                                                <rect key="frame" x="8" y="320" width="398" height="210"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-6B-Ire">
+                                                <rect key="frame" x="8" y="362" width="398" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="9hf-UT-wZ2"/>
+                                                </constraints>
                                                 <string key="text">Hilton Mexico City Reforma offers a convenient downtown location, just footsteps from the historical downtown and the famous Reforma Ave.
 
 A top choice for business travelers, this hotel provides flexible meeting spaces, dining options and panoramic views all within steps of businesses and offices. Stay productive in a modern guest room with a large work desk, ergonomic chair and complimentary WiFi.</string>
@@ -45,8 +45,23 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-p5-KD4">
+                                                <rect key="frame" x="0.0" y="738" width="414" height="231"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button" image="mapa"/>
+                                                <connections>
+                                                    <action selector="mapa:" destination="9Ub-2c-04K" eventType="touchUpInside" id="Mrz-ou-qwJ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HILTON HOTEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-jd-eye">
+                                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.6231003852739726" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                                <color key="textColor" red="0.0" green="0.74472314120000005" blue="0.83786565069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-oY-hs0">
-                                                <rect key="frame" x="61" y="545" width="32" height="32"/>
+                                                <rect key="frame" x="103" y="620" width="32" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button" image="google"/>
                                                 <connections>
@@ -54,54 +69,63 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-25-VKB">
-                                                <rect key="frame" x="191" y="545" width="32" height="32"/>
+                                                <rect key="frame" x="247" y="620" width="32" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="uber"/>
+                                                <state key="normal" title="Button" image="waze"/>
                                                 <connections>
                                                     <action selector="uber:" destination="9Ub-2c-04K" eventType="touchUpInside" id="38a-Dt-gUG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdh-py-cz7">
-                                                <rect key="frame" x="316" y="545" width="32" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="waze"/>
-                                                <connections>
-                                                    <action selector="waze:" destination="9Ub-2c-04K" eventType="touchUpInside" id="DkY-hK-E4I"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDd-p5-KD4">
-                                                <rect key="frame" x="0.0" y="624" width="414" height="264"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button" image="mapa"/>
-                                                <connections>
-                                                    <action selector="mapa:" destination="9Ub-2c-04K" eventType="touchUpInside" id="Mrz-ou-qwJ"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HILTON HOTEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-jd-eye">
-                                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.6231003852739726" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                                <color key="textColor" red="0.0" green="0.74472314120000005" blue="0.83786565069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="I2j-5w-Qe2" firstAttribute="top" secondItem="Mgj-wC-FBr" secondAttribute="bottom" constant="8" id="5VK-6V-1DF"/>
+                                            <constraint firstItem="GY6-jd-eye" firstAttribute="leading" secondItem="Mgj-wC-FBr" secondAttribute="leading" id="7mB-Q7-pKy"/>
+                                            <constraint firstItem="ST8-6B-Ire" firstAttribute="trailing" secondItem="VG5-YV-bbq" secondAttribute="trailingMargin" id="Ad0-9O-t7n"/>
+                                            <constraint firstItem="I2j-5w-Qe2" firstAttribute="leading" secondItem="ST8-6B-Ire" secondAttribute="leading" id="F3Q-T6-Hkh"/>
+                                            <constraint firstAttribute="height" constant="1000" id="L4x-0s-59i"/>
+                                            <constraint firstAttribute="trailing" secondItem="I2j-5w-Qe2" secondAttribute="trailing" constant="18.5" id="N55-h4-fHm"/>
+                                            <constraint firstItem="GY6-jd-eye" firstAttribute="leading" secondItem="VG5-YV-bbq" secondAttribute="leading" id="NyD-96-CG0"/>
+                                            <constraint firstAttribute="trailing" secondItem="GY6-jd-eye" secondAttribute="trailing" id="S5Z-3Q-ZfI"/>
+                                            <constraint firstItem="Mgj-wC-FBr" firstAttribute="top" secondItem="VG5-YV-bbq" secondAttribute="top" constant="44" id="em5-YC-Yfd"/>
+                                            <constraint firstItem="GY6-jd-eye" firstAttribute="top" secondItem="Mgj-wC-FBr" secondAttribute="top" id="guh-Lb-g9w"/>
+                                            <constraint firstItem="GY6-jd-eye" firstAttribute="trailing" secondItem="Mgj-wC-FBr" secondAttribute="trailing" id="kZV-oP-Bk7"/>
+                                            <constraint firstAttribute="trailing" secondItem="ST8-6B-Ire" secondAttribute="trailing" constant="8" id="klF-fw-DYt"/>
+                                            <constraint firstItem="I2j-5w-Qe2" firstAttribute="leading" secondItem="VG5-YV-bbq" secondAttribute="leading" constant="8" id="lWv-DK-uON"/>
+                                            <constraint firstItem="GY6-jd-eye" firstAttribute="leading" secondItem="VG5-YV-bbq" secondAttribute="leading" id="p2C-YJ-eo4"/>
+                                            <constraint firstItem="ST8-6B-Ire" firstAttribute="top" secondItem="I2j-5w-Qe2" secondAttribute="bottom" constant="10" id="pxf-qS-x0g"/>
+                                            <constraint firstItem="Mgj-wC-FBr" firstAttribute="bottom" secondItem="GY6-jd-eye" secondAttribute="bottom" id="wQy-IP-KqL"/>
+                                            <constraint firstItem="ST8-6B-Ire" firstAttribute="leading" secondItem="VG5-YV-bbq" secondAttribute="leading" constant="8" id="yaa-b1-vor"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VG5-YV-bbq" secondAttribute="trailing" id="Hfr-PO-1FS"/>
+                                    <constraint firstItem="VG5-YV-bbq" firstAttribute="centerX" secondItem="sbY-93-d0A" secondAttribute="centerX" id="Jny-eR-NxH"/>
+                                    <constraint firstAttribute="bottom" secondItem="VG5-YV-bbq" secondAttribute="bottom" constant="-44" id="eJL-aa-Udc"/>
+                                    <constraint firstItem="VG5-YV-bbq" firstAttribute="top" secondItem="sbY-93-d0A" secondAttribute="top" constant="-44" id="rve-wS-dGH"/>
+                                    <constraint firstItem="VG5-YV-bbq" firstAttribute="leading" secondItem="Nm9-Vh-F5h" secondAttribute="leading" id="vkE-Ei-0B7"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Oc7-F6-vlR"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Nm9-Vh-F5h"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sbY-93-d0A" firstAttribute="bottom" secondItem="cTH-gb-5MJ" secondAttribute="bottom" id="6Az-yq-Zvu"/>
+                            <constraint firstItem="sbY-93-d0A" firstAttribute="centerX" secondItem="zII-rO-qms" secondAttribute="centerX" id="AeI-mo-OhK"/>
+                            <constraint firstItem="sbY-93-d0A" firstAttribute="leading" secondItem="cTH-gb-5MJ" secondAttribute="leading" id="OEY-vF-emA"/>
+                            <constraint firstItem="sbY-93-d0A" firstAttribute="top" secondItem="cTH-gb-5MJ" secondAttribute="top" id="QFY-KF-0Za"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cTH-gb-5MJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lugar" id="i4d-DV-tZU"/>
                     <navigationItem key="navigationItem" id="erT-dB-V2N"/>
+                    <size key="freeformSize" width="414" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xh5-ol-LmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786.95652173913049" y="2645.7589285714284"/>
+            <point key="canvasLocation" x="-820.28985507246387" y="2581.4732142857142"/>
         </scene>
         <!--Contacto View Controller-->
         <scene sceneID="aKo-et-sOd">
@@ -554,7 +578,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
-        <!--AGENDA-->
+        <!--Agenda-->
         <scene sceneID="DFW-g9-odn">
             <objects>
                 <viewController id="1T5-a0-PfD" customClass="AgendaViewController" customModule="K_Forum_2020" customModuleProvider="target" sceneMemberID="viewController">
@@ -576,7 +600,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDc-Ye-fhK">
                                                     <rect key="frame" x="115" y="11" width="279" height="96"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="96" id="nCs-VF-AUZ"/>
+                                                        <constraint firstAttribute="height" constant="70" id="nCs-VF-AUZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -586,7 +610,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                     <rect key="frame" x="20" y="11" width="75" height="96"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="75" id="Ewb-Gc-823"/>
-                                                        <constraint firstAttribute="height" constant="96" id="oav-sz-4jR"/>
+                                                        <constraint firstAttribute="height" constant="70" id="oav-sz-4jR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -659,7 +683,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mth-3D-hpI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="AGENDA" image="02_agenda-24" selectedImage="02_agenda-24" id="sl7-P2-Mu1"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="02_agenda-24" selectedImage="02_agenda-24" id="sl7-P2-Mu1"/>
                     <connections>
                         <outlet property="scSegment" destination="6NB-10-NQR" id="ok1-Jo-0x9"/>
                         <outlet property="tableView" destination="8qy-8W-pKK" id="dyh-ik-3NL"/>
@@ -699,7 +723,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="261" id="8dG-Ix-5zf"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -764,7 +788,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-lJ-zty">
-                                <rect key="frame" x="10" y="215" width="394" height="593"/>
+                                <rect key="frame" x="10" y="222" width="394" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Tomás has a proven track record as founder and CEO of Cosmetic Colors guiding the company from a start up to a joint venture with Schwan Cosmetics and together to a well-established leader in the field. The company has grown in a socially responsible way steadily increasing by 25 % per year for fifteen years.
 
@@ -781,18 +805,19 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_ponentes_1200-x-600" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-Hi-Kue">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1_ponentes_1200-x-600" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0M-Hi-Kue">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="207" id="TkV-oM-7zi"/>
+                                    <constraint firstAttribute="height" constant="200" id="Brc-FQ-7os"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qwK-lJ-zty" firstAttribute="top" secondItem="w0M-Hi-Kue" secondAttribute="bottom" constant="8" id="5yq-Zn-9z6"/>
                             <constraint firstItem="w0M-Hi-Kue" firstAttribute="trailing" secondItem="RfR-Xt-eg9" secondAttribute="trailing" id="GYm-x9-1Ho"/>
                             <constraint firstItem="qwK-lJ-zty" firstAttribute="bottom" secondItem="RfR-Xt-eg9" secondAttribute="bottom" id="KSe-HZ-9ab"/>
+                            <constraint firstItem="qwK-lJ-zty" firstAttribute="top" secondItem="w0M-Hi-Kue" secondAttribute="bottom" constant="22" id="KtU-2m-6tN"/>
                             <constraint firstItem="qwK-lJ-zty" firstAttribute="leading" secondItem="RfR-Xt-eg9" secondAttribute="leading" constant="10" id="N9n-VE-DhJ"/>
                             <constraint firstItem="w0M-Hi-Kue" firstAttribute="top" secondItem="RfR-Xt-eg9" secondAttribute="top" id="RQc-t9-fEa"/>
                             <constraint firstItem="w0M-Hi-Kue" firstAttribute="leading" secondItem="RfR-Xt-eg9" secondAttribute="leading" id="d5g-ck-Tlh"/>
@@ -808,7 +833,7 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCb-Es-d3k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="1017"/>
+            <point key="canvasLocation" x="2953.6231884057975" y="1016.5178571428571"/>
         </scene>
         <!--Home-->
         <scene sceneID="x6Q-32-wNd">
@@ -819,54 +844,13 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-de-no8">
-                                <rect key="frame" x="87" y="334" width="240" height="128"/>
+                                <rect key="frame" x="87" y="331" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="0rr-ig-42e"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lsu-i5-IGn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="Dah-OX-pIw"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pay-HP-0bd">
-                                    <size key="itemSize" width="410" height="197"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="celdaSlider" id="sSB-Xu-W5p" customClass="SliderCollectionViewCell" customModule="K_Forum_2020" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15" width="410" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4i7-Dt-JZ1">
-                                            <rect key="frame" x="0.0" y="0.0" width="410" height="200"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-t7-j1h">
-                                                    <rect key="frame" x="0.0" y="22" width="410" height="178"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="gpc-t7-j1h" secondAttribute="trailing" id="3Mk-OF-aKW"/>
-                                                <constraint firstItem="gpc-t7-j1h" firstAttribute="top" secondItem="4i7-Dt-JZ1" secondAttribute="top" constant="22" id="O0C-4K-GZC"/>
-                                                <constraint firstAttribute="bottom" secondItem="gpc-t7-j1h" secondAttribute="bottom" id="fZa-lg-UaW"/>
-                                                <constraint firstItem="gpc-t7-j1h" firstAttribute="leading" secondItem="4i7-Dt-JZ1" secondAttribute="leading" id="r2A-y8-DFy"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="410" height="200"/>
-                                        <connections>
-                                            <outlet property="imagePerCell" destination="gpc-t7-j1h" id="wnV-85-ccc"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="delegate" destination="7HU-u2-K0i" id="3wP-G6-XZ0"/>
-                                </connections>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre asistente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4Q-Jc-qVF">
-                                <rect key="frame" x="8" y="477" width="398" height="52"/>
+                                <rect key="frame" x="8" y="474" width="398" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="KN2-Et-yvS"/>
                                 </constraints>
@@ -874,27 +858,43 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZo-Sa-TLY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="207"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="207" id="1oK-Cb-RxH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_Admin_powered_App-1" translatesAutoresizingMaskIntoConstraints="NO" id="vTN-W6-dhU">
+                                <rect key="frame" x="57" y="643" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="qcQ-7W-G1e"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xW6-Di-dlZ" firstAttribute="trailing" secondItem="O4Q-Jc-qVF" secondAttribute="trailing" constant="8" id="3pS-EN-zEf"/>
+                            <constraint firstItem="xW6-Di-dlZ" firstAttribute="bottom" secondItem="vTN-W6-dhU" secondAttribute="bottom" constant="20" id="7Wo-4W-WYx"/>
                             <constraint firstItem="aA0-de-no8" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" constant="87" id="EIg-te-Pc5"/>
-                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="trailing" secondItem="xW6-Di-dlZ" secondAttribute="trailing" id="Mnk-39-PpQ"/>
+                            <constraint firstItem="eZo-Sa-TLY" firstAttribute="top" secondItem="xW6-Di-dlZ" secondAttribute="top" id="IHt-mb-e3o"/>
+                            <constraint firstItem="eZo-Sa-TLY" firstAttribute="trailing" secondItem="xW6-Di-dlZ" secondAttribute="trailing" id="K2Z-4S-WjQ"/>
+                            <constraint firstItem="aA0-de-no8" firstAttribute="top" secondItem="eZo-Sa-TLY" secondAttribute="bottom" constant="80" id="P6O-NN-2Gr"/>
                             <constraint firstItem="O4Q-Jc-qVF" firstAttribute="top" secondItem="aA0-de-no8" secondAttribute="bottom" constant="15" id="QTy-De-rcM"/>
                             <constraint firstItem="O4Q-Jc-qVF" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" constant="8" id="TsN-g5-yZc"/>
                             <constraint firstItem="xW6-Di-dlZ" firstAttribute="trailing" secondItem="aA0-de-no8" secondAttribute="trailing" constant="87" id="bXm-Jb-NfY"/>
-                            <constraint firstItem="aA0-de-no8" firstAttribute="top" secondItem="Lsu-i5-IGn" secondAttribute="bottom" constant="60" id="mBl-sT-NRL"/>
-                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" id="yhQ-wt-ugd"/>
-                            <constraint firstItem="Lsu-i5-IGn" firstAttribute="top" secondItem="xW6-Di-dlZ" secondAttribute="top" id="yrA-49-ZjH"/>
+                            <constraint firstItem="eZo-Sa-TLY" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" id="bYd-e5-U4E"/>
+                            <constraint firstItem="xW6-Di-dlZ" firstAttribute="trailing" secondItem="vTN-W6-dhU" secondAttribute="trailing" constant="57" id="cXK-9h-1bh"/>
+                            <constraint firstItem="vTN-W6-dhU" firstAttribute="leading" secondItem="xW6-Di-dlZ" secondAttribute="leading" constant="57" id="osJ-EC-rpT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xW6-Di-dlZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="01_home-24" selectedImage="01_home-24" id="ftr-N7-QHu"/>
                     <navigationItem key="navigationItem" id="5pv-wZ-gFw"/>
                     <connections>
+                        <outlet property="imagenHeader" destination="eZo-Sa-TLY" id="qCg-Lf-bQ0"/>
                         <outlet property="nombreAsistente" destination="O4Q-Jc-qVF" id="c9O-YA-5jg"/>
                         <outlet property="qrImage" destination="aA0-de-no8" id="blm-IL-IgF"/>
-                        <outlet property="sliderCollectionView" destination="Lsu-i5-IGn" id="1bf-iN-4ea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWk-Kv-9Fh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1349,12 +1349,12 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
         <image name="04_notifications-24" width="24" height="24"/>
         <image name="05_menu-24" width="24" height="24"/>
         <image name="1_ponentes_1200-x-600" width="1200" height="600"/>
+        <image name="Logo_Admin_powered_App-1" width="400" height="200"/>
         <image name="google" width="32" height="32"/>
         <image name="hilton" width="400" height="200"/>
         <image name="home-icon-silhouette" width="32" height="32"/>
         <image name="logo-dark" width="150" height="150"/>
         <image name="mapa" width="400" height="256"/>
-        <image name="uber" width="32" height="32"/>
         <image name="waze" width="32" height="32"/>
     </resources>
 </document>

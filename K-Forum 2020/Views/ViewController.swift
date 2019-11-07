@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     struct Info: Codable {
         let email: String
         let password: String
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
 //        emailLB.text = "ismael.gonzalez@e-administra.com"
 //        passwordTF.text = "Kforum2020"
-        
+        delegarTF()
         if (Auth.auth().currentUser != nil){
             let email=Auth.auth().currentUser?.email
             let password = "Kforum2020"
@@ -167,7 +167,28 @@ class ViewController: UIViewController {
        
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 
+     func delegarTF(){
+        self.emailLB.delegate = self
+        self.passwordTF.delegate = self;
+        }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        emailLB.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+        self.view.endEditing(true)
+        return true
+    }
 
 }
 

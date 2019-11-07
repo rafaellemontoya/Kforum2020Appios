@@ -34,8 +34,8 @@ class MenuViewController: UIViewController {
         array.append(Menu(id:3,texto:"Download content", imagen: UIImage(named: "09_download-64")! ))
         array.append(Menu(id:4,texto:"Contact us", imagen: UIImage(named: "11_contact-64")! ))
         array.append(Menu(id:5,texto:"Help", imagen: UIImage(named: "10_help-64")! ))
-        array.append(Menu(id:6,texto:"Poll", imagen: UIImage(named: "12_poll-64")! ))
-        array.append(Menu(id:7,texto:"Log-out", imagen: UIImage(named: "12_poll-64")! ))
+        array.append(Menu(id:6,texto:"Polls", imagen: UIImage(named: "12_poll-64")! ))
+        array.append(Menu(id:7,texto:"Log-out", imagen: UIImage(named: "13_logout-24")! ))
     }
     
 

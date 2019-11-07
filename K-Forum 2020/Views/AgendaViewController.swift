@@ -19,7 +19,7 @@ class AgendaViewController: UIViewController {
     
     var arrayAcompananteDia1:  [Agenda] = []
     var arrayAcompananteDia2:  [Agenda] = []
-    var secciones: [String] = ["Dia 1", "Día 2"]
+    var secciones: [String] = ["Day 1 | November 14th", "Day 2 | November 15th"]
     
     var sectionData: [Int:[Agenda]] = [:]
     let coleccion = "agenda"
@@ -57,30 +57,31 @@ class AgendaViewController: UIViewController {
         
     }
     func getInfoAcompanante(){
-        db.collection(coleccion).whereField("participante", isEqualTo: 2).getDocuments(){(querySnapshot, err) in
+        db.collection(coleccion).order(by: "orden").addSnapshotListener(){(querySnapshot, err) in
             if let err = err{
                 print("Error obteniendo documentos \(err)")
                 
             }else{
-                
+                self.arrayAcompananteDia1=[]
+                self.arrayAcompananteDia2=[]
                 for document in querySnapshot!.documents{
                     let seleccionado = Agenda()
+                    if(document.data()["participante"]as? Int == 2){
+                        
+                        if let hora = document.data()["hora"]as? String{
+                            seleccionado.hora = hora
+                        }
+                        if let evento = document.data()["evento"]as? String{
+                            seleccionado.evento = evento
+                        }
+                        
+                        if(document.data()["dia"]as? Int == 1){
+                            self.arrayAcompananteDia1.append(seleccionado)
+                        }else{
+                            self.arrayAcompananteDia2.append(seleccionado)
+                        }
                     
-                    
-                    if let hora = document.data()["hora"]as? String{
-                        seleccionado.hora = hora
                     }
-                    if let evento = document.data()["evento"]as? String{
-                        seleccionado.evento = evento
-                    }
-                    
-                    if(document.data()["dia"]as? Int == 1){
-                        self.arrayAcompananteDia1.append(seleccionado)
-                    }else{
-                        self.arrayAcompananteDia2.append(seleccionado)
-                    }
-                    
-                    
                     
                 }
                 self.setInfoParticipante()
@@ -92,29 +93,30 @@ class AgendaViewController: UIViewController {
         
     }
     func getInfoParticipante(){
-        db.collection(coleccion).whereField("participante", isEqualTo: 1).getDocuments(){(querySnapshot, err) in
+        db.collection(coleccion).order(by: "orden").addSnapshotListener(){(querySnapshot, err) in
             if let err = err{
                 print("Error obteniendo documentos \(err)")
                 
             }else{
-                
+                self.array=[]
+                self.arrayDia2=[]
                 for document in querySnapshot!.documents{
                     let seleccionado = Agenda()
                     
-                    
-                    if let hora = document.data()["hora"]as? String{
-                        seleccionado.hora = hora
+                    if(document.data()["participante"]as? Int == 1){
+                        if let hora = document.data()["hora"]as? String{
+                            seleccionado.hora = hora
+                        }
+                        if let evento = document.data()["evento"]as? String{
+                            seleccionado.evento = evento
+                        }
+                        
+                        if(document.data()["dia"]as? Int == 1){
+                            self.array.append(seleccionado)
+                        }else{
+                            self.arrayDia2.append(seleccionado)
+                        }
                     }
-                    if let evento = document.data()["evento"]as? String{
-                        seleccionado.evento = evento
-                    }
-                    
-                    if(document.data()["dia"]as? Int == 1){
-                        self.array.append(seleccionado)
-                    }else{
-                        self.arrayDia2.append(seleccionado)
-                    }
-                    
                     
                     
                 }
@@ -154,9 +156,9 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource{
         view.backgroundColor = UIColor.white
         
         let label = UILabel()
-        label.textColor = UIColor(red: 0, green: 193, blue: 213, alpha: 1)
+        label.textColor = UIColor(red: CGFloat(0)/255.0, green: CGFloat(190)/255.0, blue: CGFloat(214)/255.0, alpha: 1.0)
         label.text = secciones[section]
-        label.frame = CGRect(x: 45, y: 0, width: 100, height: 35)
+        label.frame = CGRect(x: 45, y: 0, width: 300, height: 35)
         view.frame.size.height = 100
         view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         

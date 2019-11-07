@@ -26,6 +26,7 @@ class DescargaTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
     }
 
      func agregarCelda(item: Descarga){
@@ -37,9 +38,10 @@ class DescargaTableViewCell: UITableViewCell {
     func agregarCelda(item: Speaker){
         
         self.titulo.text = item.nombre
-        let url = URL(string: item.imagenSpeaker)
-        let data = try? Data(contentsOf: url!)
-        self.imagen.image = UIImage(data: data!)
+//        let url = URL(string: item.imagenSpeaker)
+//        let data = try? Data(contentsOf: url!)
+        self.imagen.image = item.imagen
         self.speaker.text = item.titulo
+        
     }
 }

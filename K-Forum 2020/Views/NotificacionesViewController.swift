@@ -32,12 +32,12 @@ class NotificacionesViewController: UIViewController {
     
 
     func getInfoAvisos(){
-        db.collection(coleccion).order(by: "orden").getDocuments(){(querySnapshot, err) in
+        db.collection(coleccion).order(by: "orden").addSnapshotListener(){(querySnapshot, err) in
              if let err = err{
                  print("Error obteniendo documentos \(err)")
                  
              }else{
-                 
+                 self.array=[]
                  for document in querySnapshot!.documents{
                      let seleccionado = Aviso()
                     seleccionado.id = document.documentID
