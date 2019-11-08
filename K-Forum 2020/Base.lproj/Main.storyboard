@@ -22,10 +22,10 @@
                                         <rect key="frame" x="0.0" y="-44" width="414" height="1000"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hilton" translatesAutoresizingMaskIntoConstraints="NO" id="Mgj-wC-FBr">
-                                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Award-winning hotel in the heart of Mexico City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2j-5w-Qe2">
-                                                <rect key="frame" x="8" y="252" width="387.5" height="100"/>
+                                                <rect key="frame" x="8" y="452" width="387.5" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="9kk-f2-EEk"/>
                                                 </constraints>
@@ -34,7 +34,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-6B-Ire">
-                                                <rect key="frame" x="8" y="362" width="398" height="250"/>
+                                                <rect key="frame" x="8" y="562" width="398" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="9hf-UT-wZ2"/>
                                                 </constraints>
@@ -54,7 +54,7 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HILTON HOTEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-jd-eye">
-                                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.6231003852739726" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                                 <color key="textColor" red="0.0" green="0.74472314120000005" blue="0.83786565069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -687,11 +687,127 @@ A top choice for business travelers, this hotel provides flexible meeting spaces
                     <connections>
                         <outlet property="scSegment" destination="6NB-10-NQR" id="ok1-Jo-0x9"/>
                         <outlet property="tableView" destination="8qy-8W-pKK" id="dyh-ik-3NL"/>
+                        <segue destination="K61-kk-60I" kind="show" identifier="detalleSG" id="G63-Pe-6vq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pO8-az-18j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1702.8985507246377" y="-633.48214285714278"/>
+        </scene>
+        <!--Detalle Agenda View Controller-->
+        <scene sceneID="P4P-SY-mfY">
+            <objects>
+                <viewController id="K61-kk-60I" customClass="DetalleAgendaViewController" customModule="K_Forum_2020" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jJe-lJ-tTA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-xi-gqE">
+                                <rect key="frame" x="0.0" y="85.5" width="414" height="722.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="157" id="tbq-dq-kzN" customClass="DetalleAgendaTableViewCell" customModule="K_Forum_2020" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="157"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tbq-dq-kzN" id="PQf-Z4-GSX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1_speakers-64" translatesAutoresizingMaskIntoConstraints="NO" id="h7Y-Bo-Zrf">
+                                                    <rect key="frame" x="9" y="15" width="128" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="128" id="uDZ-A1-KBw"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Suu-Ej-bWC">
+                                                    <rect key="frame" x="145" y="20" width="261" height="126"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Antonio del Valle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy5-zv-GuW">
+                                                            <rect key="frame" x="0.0" y="52" width="261" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Antonio del Valle" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naT-VW-ZCn">
+                                                            <rect key="frame" x="0.0" y="89" width="261" height="37"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.74472314120000005" blue="0.83786565069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitulo" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpA-0e-R6c">
+                                                            <rect key="frame" x="0.0" y="8" width="261" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="261" id="9sa-Z4-APP"/>
+                                                                <constraint firstAttribute="height" constant="21" id="Ktb-vj-Mje"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="tpA-0e-R6c" firstAttribute="leading" secondItem="Zy5-zv-GuW" secondAttribute="leading" id="2do-ar-g4a"/>
+                                                        <constraint firstItem="tpA-0e-R6c" firstAttribute="centerX" secondItem="Suu-Ej-bWC" secondAttribute="centerX" id="94v-EU-Pzy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="naT-VW-ZCn" secondAttribute="bottom" id="MLq-tN-KEg"/>
+                                                        <constraint firstItem="tpA-0e-R6c" firstAttribute="leading" secondItem="Suu-Ej-bWC" secondAttribute="leading" id="Ssk-6h-kyO"/>
+                                                        <constraint firstItem="naT-VW-ZCn" firstAttribute="top" secondItem="Zy5-zv-GuW" secondAttribute="bottom" constant="16" id="fom-Z1-eS0"/>
+                                                        <constraint firstItem="tpA-0e-R6c" firstAttribute="top" secondItem="Suu-Ej-bWC" secondAttribute="topMargin" id="kxJ-aM-3VM"/>
+                                                        <constraint firstItem="Zy5-zv-GuW" firstAttribute="top" secondItem="tpA-0e-R6c" secondAttribute="bottom" constant="23" id="ows-JE-jRh"/>
+                                                        <constraint firstItem="Zy5-zv-GuW" firstAttribute="trailing" secondItem="naT-VW-ZCn" secondAttribute="trailing" id="qdv-mz-Oef"/>
+                                                        <constraint firstItem="Zy5-zv-GuW" firstAttribute="leading" secondItem="naT-VW-ZCn" secondAttribute="leading" id="rhL-x7-7on"/>
+                                                        <constraint firstItem="tpA-0e-R6c" firstAttribute="trailing" secondItem="Zy5-zv-GuW" secondAttribute="trailing" id="sGJ-fE-giu"/>
+                                                        <constraint firstItem="Zy5-zv-GuW" firstAttribute="centerY" secondItem="Suu-Ej-bWC" secondAttribute="centerY" id="vwM-bJ-j1J"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="h7Y-Bo-Zrf" firstAttribute="leading" secondItem="PQf-Z4-GSX" secondAttribute="leadingMargin" constant="-11" id="42P-j0-bPh"/>
+                                                <constraint firstItem="h7Y-Bo-Zrf" firstAttribute="top" secondItem="PQf-Z4-GSX" secondAttribute="topMargin" constant="4" id="50l-N1-Yqs"/>
+                                                <constraint firstItem="Suu-Ej-bWC" firstAttribute="leading" secondItem="h7Y-Bo-Zrf" secondAttribute="trailing" constant="8" id="8ik-xs-Th5"/>
+                                                <constraint firstItem="Suu-Ej-bWC" firstAttribute="top" secondItem="PQf-Z4-GSX" secondAttribute="topMargin" constant="9" id="Fm6-60-SkX"/>
+                                                <constraint firstItem="Suu-Ej-bWC" firstAttribute="bottom" secondItem="PQf-Z4-GSX" secondAttribute="bottomMargin" id="UNb-qu-aoF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Suu-Ej-bWC" secondAttribute="trailing" constant="8" id="e8f-2l-IH5"/>
+                                                <constraint firstItem="h7Y-Bo-Zrf" firstAttribute="centerY" secondItem="PQf-Z4-GSX" secondAttribute="centerY" id="fgc-fH-8Lh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagen" destination="h7Y-Bo-Zrf" id="6p3-di-Zoa"/>
+                                            <outlet property="nombreLB" destination="Zy5-zv-GuW" id="wmM-4e-sud"/>
+                                            <outlet property="puestoLB" destination="naT-VW-ZCn" id="Oci-1S-b0u"/>
+                                            <outlet property="subtituloLB" destination="tpA-0e-R6c" id="j0T-gn-oEy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our future in pourpuse" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0j-Hz-63x">
+                                <rect key="frame" x="20" y="29" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s0j-Hz-63x" firstAttribute="centerX" secondItem="2Ku-xi-gqE" secondAttribute="centerX" id="0N5-4q-Wcb"/>
+                            <constraint firstItem="2Ku-xi-gqE" firstAttribute="leading" secondItem="WTj-d0-BfX" secondAttribute="leading" id="Aca-Sr-o7y"/>
+                            <constraint firstItem="s0j-Hz-63x" firstAttribute="top" secondItem="WTj-d0-BfX" secondAttribute="top" constant="29" id="DgK-Ls-JKn"/>
+                            <constraint firstItem="s0j-Hz-63x" firstAttribute="trailing" secondItem="jJe-lJ-tTA" secondAttribute="trailingMargin" id="GhR-ne-nlM"/>
+                            <constraint firstItem="2Ku-xi-gqE" firstAttribute="top" secondItem="s0j-Hz-63x" secondAttribute="bottom" constant="30" id="JAT-ND-DL2"/>
+                            <constraint firstItem="2Ku-xi-gqE" firstAttribute="bottom" secondItem="WTj-d0-BfX" secondAttribute="bottom" id="kQw-MC-PLN"/>
+                            <constraint firstItem="s0j-Hz-63x" firstAttribute="leading" secondItem="jJe-lJ-tTA" secondAttribute="leadingMargin" id="sDc-EL-yQU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WTj-d0-BfX"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EoK-xc-pXW"/>
+                    <connections>
+                        <outlet property="tabla" destination="2Ku-xi-gqE" id="NcA-Gf-9S1"/>
+                        <outlet property="tituloLB" destination="s0j-Hz-63x" id="b33-25-hUE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZp-fb-5mV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2621.739130434783" y="-634.15178571428567"/>
         </scene>
         <!--Speakers-->
         <scene sceneID="uGu-4n-Hq8">
@@ -1349,6 +1465,7 @@ Tomás has a degree in Engineering and an MBA from IPADE Business School (Instit
         <image name="04_notifications-24" width="24" height="24"/>
         <image name="05_menu-24" width="24" height="24"/>
         <image name="1_ponentes_1200-x-600" width="1200" height="600"/>
+        <image name="1_speakers-64" width="64" height="64"/>
         <image name="Logo_Admin_powered_App-1" width="400" height="200"/>
         <image name="google" width="32" height="32"/>
         <image name="hilton" width="400" height="200"/>

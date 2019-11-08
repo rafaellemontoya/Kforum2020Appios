@@ -19,6 +19,9 @@
 		053FEABA236A27ED00632EB4 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053FEAB9236A27ED00632EB4 /* MenuTableViewCell.swift */; };
 		053FEABC236A28F300632EB4 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053FEABB236A28F300632EB4 /* Menu.swift */; };
 		053FEABE236A2B1100632EB4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053FEABD236A2B1100632EB4 /* MenuViewController.swift */; };
+		05659BFA2374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05659BF92374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift */; };
+		05659BFC2374EDD500FD1B09 /* DetalleAgenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05659BFB2374EDD500FD1B09 /* DetalleAgenda.swift */; };
+		05659BFE2374FCBB00FD1B09 /* DetalleAgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05659BFD2374FCBB00FD1B09 /* DetalleAgendaViewController.swift */; };
 		0580E3C72367D1AA00A08638 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580E3C62367D1AA00A08638 /* AppDelegate.swift */; };
 		0580E3C92367D1AA00A08638 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580E3C82367D1AA00A08638 /* SceneDelegate.swift */; };
 		0580E3CB2367D1AA00A08638 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580E3CA2367D1AA00A08638 /* ViewController.swift */; };
@@ -64,6 +67,9 @@
 		053FEAB9236A27ED00632EB4 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		053FEABB236A28F300632EB4 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		053FEABD236A2B1100632EB4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		05659BF92374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleAgendaTableViewCell.swift; sourceTree = "<group>"; };
+		05659BFB2374EDD500FD1B09 /* DetalleAgenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleAgenda.swift; sourceTree = "<group>"; };
+		05659BFD2374FCBB00FD1B09 /* DetalleAgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleAgendaViewController.swift; sourceTree = "<group>"; };
 		0580E3C32367D1AA00A08638 /* K-Forum 2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "K-Forum 2020.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0580E3C62367D1AA00A08638 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0580E3C82367D1AA00A08638 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				05CEB3E6236C7C800029B2E2 /* PreguntasTableViewCell.swift */,
 				05929BF0236CA40A006EBBC2 /* PollsTableViewCell.swift */,
 				05929BF4236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift */,
+				05659BF92374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				05CEB3E8236C7D3B0029B2E2 /* ConferenciaQAP.swift */,
 				05929BF6236CA89F006EBBC2 /* Respuesta.swift */,
 				0597628A236E0B1400855253 /* InformacionParticipante.swift */,
+				05659BFB2374EDD500FD1B09 /* DetalleAgenda.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 				05E38818236C9D13001AD642 /* ConferenciaPollViewController.swift */,
 				05929BF2236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift */,
 				05AFF381236CFA6700DCFA3D /* QASeleccionadaViewController.swift */,
+				05659BFD2374FCBB00FD1B09 /* DetalleAgendaViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05659BFA2374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift in Sources */,
 				05929BF1236CA40A006EBBC2 /* PollsTableViewCell.swift in Sources */,
 				05C32DB8236A4563005E5DE6 /* Perfil.swift in Sources */,
 				05929BF7236CA89F006EBBC2 /* Respuesta.swift in Sources */,
@@ -354,6 +364,8 @@
 				05DA239C23691C7700A60B72 /* InicioViewController.swift in Sources */,
 				0580E3C72367D1AA00A08638 /* AppDelegate.swift in Sources */,
 				05E38819236C9D14001AD642 /* ConferenciaPollViewController.swift in Sources */,
+				05659BFC2374EDD500FD1B09 /* DetalleAgenda.swift in Sources */,
+				05659BFE2374FCBB00FD1B09 /* DetalleAgendaViewController.swift in Sources */,
 				05DA23962369159A00A60B72 /* Asistente.swift in Sources */,
 				05198086236A648F006154B6 /* DescargasViewController.swift in Sources */,
 				05CEB3E9236C7D3B0029B2E2 /* ConferenciaQAP.swift in Sources */,

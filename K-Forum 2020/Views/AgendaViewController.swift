@@ -23,7 +23,7 @@ class AgendaViewController: UIViewController {
     
     var sectionData: [Int:[Agenda]] = [:]
     let coleccion = "agenda"
-    
+    var itemSeleccionado: Agenda = Agenda()
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -64,9 +64,16 @@ class AgendaViewController: UIViewController {
             }else{
                 self.arrayAcompananteDia1=[]
                 self.arrayAcompananteDia2=[]
+                
+                
                 for document in querySnapshot!.documents{
+                    
+                    
                     let seleccionado = Agenda()
+                    
                     if(document.data()["participante"]as? Int == 2){
+                        
+                        
                         
                         if let hora = document.data()["hora"]as? String{
                             seleccionado.hora = hora
@@ -104,11 +111,15 @@ class AgendaViewController: UIViewController {
                     let seleccionado = Agenda()
                     
                     if(document.data()["participante"]as? Int == 1){
+                        seleccionado.id = document.documentID
                         if let hora = document.data()["hora"]as? String{
                             seleccionado.hora = hora
                         }
                         if let evento = document.data()["evento"]as? String{
                             seleccionado.evento = evento
+                        }
+                        if let abre = document.data()["abrir"]as? Int{
+                            seleccionado.abre = abre
                         }
                         
                         if(document.data()["dia"]as? Int == 1){
@@ -171,6 +182,18 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource{
         cell.agregarCelda(agenda:sectionData[indexPath.section]![indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.itemSeleccionado = sectionData[indexPath.section]![indexPath.row]
+        if(sectionData[indexPath.section]![indexPath.row].abre == 1){
+             performSegue(withIdentifier: "detalleSG", sender: self)
+        }
+       
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let receiver = segue.destination as! DetalleAgendaViewController
+        receiver.seleccionado = self.itemSeleccionado
+    }
+    
     
     
 }

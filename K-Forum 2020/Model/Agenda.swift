@@ -9,17 +9,19 @@
 import Foundation
 
 class Agenda{
-    var hora, evento: String
-    var id:Int
+    var hora, evento,id: String
+    var abre:Int
     
     init(){
         hora = ""
         evento = ""
-        id = 0;
+        id = "";
+        abre = 0
     }
-    init?(id:Int,hora: String, evento: String){
+    init?(id:String,hora: String, evento: String, abre:Int){
         self.id = id
         self.hora = hora
         self.evento = evento
+        self.abre = abre
     }
 }
