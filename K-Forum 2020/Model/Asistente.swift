@@ -10,11 +10,13 @@ import Foundation
 
 class Asistente: Decodable {
     var id, nombre, apellido,estado: String
+    var tipo : Int
     
     init() {
         id = ""
         nombre = ""
         apellido = ""
         estado = ""
+        tipo = 0 ;
     }
 }

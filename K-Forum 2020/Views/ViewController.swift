@@ -8,12 +8,15 @@
 
 import UIKit
 import Firebase
+import UserNotifications
+import FirebaseFirestore
 
 class ViewController: UIViewController, UITextFieldDelegate {
     struct Info: Codable {
         let email: String
         let password: String
     }
+    var blackSquare: UIView!
     var asistente: Asistente?
 
     @IBOutlet weak var emailLB: UITextField!
@@ -43,39 +46,54 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        emailLB.text = "ismael.gonzalez@e-administra.com"
-//        passwordTF.text = "Kforum2020"
+        
+        blackSquare = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        let imageName = "splash_2732-X-2732.jpg"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        imageView.contentMode = .scaleAspectFill
+        blackSquare.addSubview(imageView)
+        blackSquare.backgroundColor = UIColor.black
+        
+        
+        view.addSubview(blackSquare)
+        
         delegarTF()
         if (Auth.auth().currentUser != nil){
             let email=Auth.auth().currentUser?.email
             let password = "Kforum2020"
+            
             login(email: email!, password: password)
+            
+        }else{
+            blackSquare.removeFromSuperview()
         }
         
     }
     func loginFirebase(email: String, password: String){
+        CustomLoader.instance.showLoaderView()
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                  
                  if let error = error {
                      print(error)
                      
                      
-                     var titulo="Error"
+                     var titulo="The password or email is incorrect"
                      if(error.localizedDescription == "The password is invalid or the user does not have a password."){
-                         titulo="Contraseña incorrecta"
+                         titulo="The password is invalid or the user does not have a password."
                          
                          
                      }else if(error.localizedDescription == "The email address is badly formatted."){
-                         titulo="El email no es válido"
+                         titulo="The email address is badly formatted."
                          
-                     }else if(error.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted."){
-                         titulo="Usuario no encontrado"
+                     }else if(error.localizedDescription == "There is no user record corresponding to this identifier."){
+                         titulo="The password is invalid or the user does not have a password."
         
                      }
                      
-                     
-                     let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: .alert)
+                     CustomLoader.instance.hideLoaderView()
+                     let alert = UIAlertController(title: titulo, message: "", preferredStyle: .alert)
                      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                          NSLog("The \"OK\" alert occured.")
                          //regreso a la pantalla anterior
@@ -87,7 +105,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                      self.present(alert, animated: true, completion: nil)
                  }
                  else if let user = user {
-                     
+                    
                     self.login(email: email, password: password)
                      
                      
@@ -97,6 +115,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     func login(email: String, password: String){
+        var s = CustomLoader()
+        s.showLoaderView()
         let session = URLSession.shared
                    let url = URL(string: "https://www.kforum2020.com/backend/apps/login_user.php")!
                    var request = URLRequest(url: url)
@@ -131,6 +151,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                       }else if(asistente.estado == "1"){
                         self.asistente = asistente
                         self.loginCorrecto(asistente:asistente)
+                        self.saveData(id:Auth.auth().currentUser!.uid, tipo: asistente.tipo)
 
                           
                       }
@@ -170,6 +191,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
+        CustomLoader.instance.hideLoaderView()
     }
 
      func delegarTF(){
@@ -189,6 +211,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
-
+    
+ 
+    func saveData(id:String,tipo: Int)  {
+        var token = ""
+        InstanceID.instanceID().instanceID { (result, error) in
+          if let error = error {
+            print("Error fetching remote instance ID: \(error)")
+          } else if let result = result {
+            print("Remote instance ID token: \(result.token)")
+            token = result.token
+            let db: Firestore!
+            Firestore.firestore().settings = FirestoreSettings()
+            // [END setup]
+            db = Firestore.firestore()
+            let ref = db.collection("users").document(id)
+            ref.setData([
+                "email": Auth.auth().currentUser?.email,
+                 "token": token,
+                 "tipo": tipo
+             ]) { err in
+                 if let err = err {
+                     print("Error updating document: \(err)")
+                 } else {
+                     print("Document successfully updated")
+                 }
+             }
+          }
+        }
+        
+        
+    }
 }
 

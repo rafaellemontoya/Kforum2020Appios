@@ -29,12 +29,7 @@ class DescargaTableViewCell: UITableViewCell {
         
     }
 
-     func agregarCelda(item: Descarga){
-        self.imagen.image = item.imagen
-        self.titulo.text = item.titulo
-        self.speaker.text = item.speaker
-        
-       }
+
     func agregarCelda(item: Speaker){
         
         self.titulo.text = item.nombre

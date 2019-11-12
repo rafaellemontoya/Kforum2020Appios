@@ -18,13 +18,14 @@ class SpeakerSeleccionadoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        CustomLoader.instance.showLoaderView()
         // Do any additional setup after loading the view.
         let url = URL(string: speaker!.plecaSpeaker)
         let data = try? Data(contentsOf: url!)
         self.imagen.image = UIImage(data: data!)
-        
+        texto.backgroundColor = UIColor.white
         texto.text = speaker?.biografia
+        CustomLoader.instance.hideLoaderView()
         
     }
     

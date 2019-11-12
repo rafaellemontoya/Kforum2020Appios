@@ -12,7 +12,8 @@ import Firebase
 class MenuViewController: UIViewController {
     
     var array:  [Menu] = []
-    
+     var db: Firestore!
+    let coleccion = "menu"
     @IBOutlet weak var tabla: UITableView!
     
     
@@ -22,20 +23,49 @@ class MenuViewController: UIViewController {
         
         tabla.delegate = self
         tabla.dataSource = self
+        
+        Firestore.firestore().settings = FirestoreSettings()
+               // [END setup]
+               db = Firestore.firestore()
 
         cargarDatos()
     }
     
     func cargarDatos(){
-        array.append(Menu(id:0,texto:"My profile", imagen: UIImage(named: "06_profile-64")! ))
-        array.append(Menu(id:1,texto:"Q & A", imagen: UIImage(named: "07_qr-64")! ))
-        array.append(Menu(id:2,texto:"Venue", imagen: UIImage(named: "08_venue-64")! ))
-        
-        array.append(Menu(id:3,texto:"Download content", imagen: UIImage(named: "09_download-64")! ))
-        array.append(Menu(id:4,texto:"Contact us", imagen: UIImage(named: "11_contact-64")! ))
-        array.append(Menu(id:5,texto:"Help", imagen: UIImage(named: "10_help-64")! ))
-        array.append(Menu(id:6,texto:"Polls", imagen: UIImage(named: "12_poll-64")! ))
-        array.append(Menu(id:7,texto:"Log-out", imagen: UIImage(named: "13_logout-24")! ))
+        db.collection(coleccion).addSnapshotListener(){(querySnapshot, err) in
+             if let err = err{
+                 print("Error obteniendo documentos \(err)")
+                 
+             }else{
+                self.array=[]
+                 for document in querySnapshot!.documents{
+                    if(document.data()["activo"]as? Int == 1){
+                        self.array.append(Menu(id:0,texto:"My profile", imagen: UIImage(named: "06_profile-64")! ))
+                               
+                               self.array.append(Menu(id:1,texto:"Venue", imagen: UIImage(named: "08_venue-64")! ))
+                               self.array.append(Menu(id:2,texto:"Venue Day Two", imagen: UIImage(named: "08_venue-64")! ))
+                               
+                               
+                               self.array.append(Menu(id:3,texto:"Contact us", imagen: UIImage(named: "11_contact-64")! ))
+                               self.array.append(Menu(id:4,texto:"FAQs", imagen: UIImage(named: "10_help-64")! ))
+                               
+                               self.array.append(Menu(id:5,texto:"Log-out", imagen: UIImage(named: "13_logout-24")! ))
+                    }else{
+                        self.array.append(Menu(id:0,texto:"My profile", imagen: UIImage(named: "06_profile-64")! ))
+                        self.array.append(Menu(id:1,texto:"Venue", imagen: UIImage(named: "08_venue-64")! ))
+                                                      
+                                                      
+                                                      
+                                                      self.array.append(Menu(id:3,texto:"Contact us", imagen: UIImage(named: "11_contact-64")! ))
+                                                      self.array.append(Menu(id:4,texto:"FAQs", imagen: UIImage(named: "10_help-64")! ))
+                                                      
+                                                      self.array.append(Menu(id:5,texto:"Log-out", imagen: UIImage(named: "13_logout-24")! ))
+                    }
+                }
+                self.tabla.reloadData()
+            }
+        };
+       
     }
     
 
@@ -51,26 +81,30 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tabla.dequeueReusableCell(withIdentifier: "cell") as! MenuTableViewCell
         cell.agregarCelda(menu:array[indexPath.row])
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
+        switch array[indexPath.row].id {
 
         case 0:
             performSegue(withIdentifier: "perfilSG", sender: self)
         case 1:
-            performSegue(withIdentifier: "qaSG", sender: self)
-        case 2:
             performSegue(withIdentifier: "lugarSG", sender: self)
+            case 2:
+            performSegue(withIdentifier: "venue2SG", sender: self)
         case 3:
-            performSegue(withIdentifier: "descargasSG", sender: self)
-        case 4:
             performSegue(withIdentifier: "contactoSG", sender: self)
-
-            case 6:
-                performSegue(withIdentifier: "pollSG", sender: self)
-        case 7:
+        case 4:
+            performSegue(withIdentifier: "faqsSG", sender: self)
+            
+                
+        case 5:
             let firebaseAuth = Auth.auth()
             do {
                 try firebaseAuth.signOut()

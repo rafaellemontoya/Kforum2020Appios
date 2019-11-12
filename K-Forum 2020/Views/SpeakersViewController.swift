@@ -18,7 +18,8 @@ class SpeakersViewController: UIViewController {
     var array:  [Speaker] = []
     var speakerSeleccionado = Speaker()
     var arraySpeaker2:  [Speaker] = []
-    var secciones: [String] = ["Keynote Speakers", "Speakers"]
+    var arraySpeaker3:  [Speaker] = []
+    var secciones: [String] = ["Keynote Speakers", "Speakers", "Panelists"]
     var sectionData: [Int:[Speaker]] = [:]
 
     let b1: String = """
@@ -81,8 +82,36 @@ Adam Beshara is a leading advisor in the General Industries and Business Service
 
 
 """
-    
-    
+        let b17: String = """
+    He is a Mechanical Engineer graduated from Anahuac University and he has finances studies from Instituto Tecnológico Autónomo de México ITAM, and Marketing from Iberoamericana University.\r\rIn September 2014, was appointed CEO of Financial Group BX+, entrusting the responsibility to lead the group to a sustainable growth.\r\rBefore his incorporation at BX+, Tomas worked since 2008 for Citi-Banamex responsible for Commercial & Corporate Banking Government and subsequently also responsible for the Mortgage Business.\r\rFrom 1992 to 2008 he held several positions at BBVA Bancomer as Director of Operations, Director of Commercial Banking, Branch Network Director, General Director of Corporate Banking, Mortgage and Government and General Director of Corporate Banking America, among others.\r\rHe participated in acquiring of Hipotecaria Nacional entity he presided and led the integration to Bancomer. He founded Mexicana de Procesamiento(CMP) which is a "Joint Venture" (50% of Bancomer and Banamex 50%). Also founder of E-Global another "Joint Venture" with Banamex, Bancomer and Bital.
+
+
+
+    """
+    let b18: String = """
+    Daniel Martínez-Valle is CEO of Orbia. He assumed this role in 2018, after serving as CEO of Orbia’s holding company, Kaluz. Prior to Kaluz, Daniel was Cisco’s Director of Worldwide Strategy & Planning.\r\rHe previously was managing partner at Nebli Capital Advisors, founder and CEO of Aquanima, and a founding partner of BBF Ventures. He also was a consultant at McKinsey & Co. and served as Ministry of Finance Chief of Staff in Mexico.
+
+
+
+    """
+        let b19: String = """
+    Alberto Paracchini has served as President, Chief Executive Officer and director of Byline Bancorp and Byline Bank since June 2013. Prior to joining Byline, Alberto served as Principal for BXM Holdings, Inc., an investment fund specializing in community bank investments. From 2006 through 2008, Alberto served as President and Chief Financial Officer of Popular Financial Holdings and Chief Financial Officer of E-Loan, an internet banking and mortgage company.\r\rPrior to 2006, Alberto spent 13 years at Banco Popular North America, where he held several senior leadership roles including Chief Financial Officer, Treasurer and the head of all operations and technology functions. Alberto is a member of the Cook County Council of Economic Advisors and Economic Club of Chicago. Alberto holds a bachelor’s degree from Marquette University and an M.B.A. from the University of Chicago Booth School of Business.
+
+
+
+    """
+        
+    let b20: String = """
+        Fernando Ruiz Jacques is Elementia’s CEO since March of 2015. Elementia is a major manufacturer of semi-finished copper, alloy, fiber cement, cement, and plastic products offering innovative constructive solutions that redefine the concept of constructive evolution.\r\rElementia has grown organically, and through strategic mergers and acquisitions, creating an integrated platform of more than 4,000 products, 36 plants in eight countries, about 6,450 employees and 5,800 distributors.\r\rPrior to his appointment as CEO, Fernando served as General Director of Building Systems Business Unit, recognized by brands such as Mexalit, Eureka, Plycem, Allura, Maxitile, Comecop and Frigocel, among others.\r\rDuring his management, Elementia launched its IPO, raising more than $250 million. These resources were used to expand Elementia’s cement capacity. Fernando oversaw the project, design and construction of the first Cementos Fortaleza plant, the new cement plant with which Elementia entered the cement sector in Mexico in 2012.\r\rThroughout his professional life, Fernando has held various management positions in widely recognized companies such as Umbral Capital and Wal-Mart de México.\r\rFernando has over 20 years of experience in the construction industry. He is a civil engineer by the Universidad Iberoamericana. In addition, he holds an MBA by UC Berkeley and a Master Degree in Finance by the Universidad Anáhuac in Mexico City.\r\rFernando is married to Elena Tamés and has three daughters. He enjoys boxing, yoga and spending time with his family.
+
+        """
+            
+    let b21: String = """
+        Grew up in Emerson, NJ.All-American in Track and FieldAll-State in FootballAttended Stanford University on an athletic scholarship.Undergrad in Economics.Masters in Sociology.Began his racing Career in 1991.Currently the Director of Human Performance for Hendrick MotorsportsHas worked with Pit Crews at Hendrick Motorsports since 1992.NASCAR’s first pit coach.  Methods used by Andy transformed the series and are utilized by teams today.Part of Jeff Gordon’s “Rainbow Warriors” through the 90’s.The team had many record setting performances including four championships.A part of Hendrick Motorsport’s thirteen Sprint Cup, Nationwide and Truck championships.Personnel Director for Hendrick Motorsports from 2000 – 2005.Involved in HR, contracts, bonus programs, safety and compliance, driver development.Executive Director of the North Carolina Motorsports Association 2006-2012.Currently sits on the Board of Directors.Now speaks on behalf of the industry in areas such as public policy, workforce development and Industry trends.
+
+
+        """
+            
     
     @IBOutlet weak var tabla: UITableView!
     
@@ -97,12 +126,13 @@ Adam Beshara is a leading advisor in the General Industries and Business Service
         
         tabla.delegate = self
         tabla.dataSource = self
+        tabla.backgroundColor = UIColor.white
         self.sectionData = [0:self.array,1:self.arraySpeaker2]
         loadData()
     }
     func loadData(){
         
-        
+        CustomLoader.instance.showLoaderView()
         db.collection(coleccion).order(by: "orden").getDocuments{(querySnapshot, err) in
              if let err = err{
                  print("Error obteniendo documentos \(err)")
@@ -132,6 +162,11 @@ Adam Beshara is a leading advisor in the General Industries and Business Service
                     if let biografia = document.data()["biografia"]as? String{
                         seleccionado.biografia = biografia
                     }
+                    var estatusMostrar = 0;
+                    if let estatus = document.data()["estatus"]as? Int{
+                        estatusMostrar = estatus
+                    }
+                    
                     
                     
                     switch document.data()["orden"]as? Int {
@@ -183,26 +218,45 @@ Adam Beshara is a leading advisor in the General Industries and Business Service
                         case 16:
                         seleccionado.biografia = self.b16
                         break
+                        case 17:
+                        seleccionado.biografia = self.b17
+                        break
+                        case 18:
+                        seleccionado.biografia = self.b18
+                        break
+                        case 19:
+                        seleccionado.biografia = self.b19
+                        break
+                        case 20:
+                        seleccionado.biografia = self.b20
+                        break
+                        case 21:
+                        seleccionado.biografia = self.b21
+                        break
                     default:
                         seleccionado.biografia = ""
                         break
                     }
                     
-                    if(document.data()["tipo"]as? Int == 1){
+                    if(document.data()["tipo"]as? Int == 1 && estatusMostrar == 0 ){
                         //keynote
                         self.array.append(seleccionado)
-                    }else{
+                    }else if(document.data()["tipo"]as? Int == 2 && estatusMostrar == 0 ){
                         self.arraySpeaker2.append(seleccionado)
+                    }else if(document.data()["tipo"]as? Int == 3 && estatusMostrar == 0 ){
+                        self.arraySpeaker3.append(seleccionado)
                     }
                     
                  }
                 
                  
              }
-             self.sectionData = [0:self.array,1:self.arraySpeaker2]
+            self.sectionData = [0:self.array,1:self.arraySpeaker2,2:self.arraySpeaker3]
+            CustomLoader.instance.hideLoaderView()
              self.tabla.reloadData()
          }
-        self.sectionData = [0:self.array,1:self.arraySpeaker2]
+        self.sectionData = [0:self.array,1:self.arraySpeaker2,2:self.arraySpeaker3]
+        
          self.tabla.reloadData()
      }
 

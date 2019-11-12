@@ -1,16 +1,16 @@
 //
-//  PollSeleccionadaTableViewCell.swift
+//  FAQSTableViewCell.swift
 //  K-Forum 2020
 //
-//  Created by Rafael Montoya on 01/11/19.
+//  Created by Rafael Montoya on 07/11/19.
 //  Copyright © 2019 Administra Servicios Integrales. All rights reserved.
 //
 
 import UIKit
 
-class PollSeleccionadaTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var respuestaLB: UILabel!
+class FAQSTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var texto: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +23,8 @@ class PollSeleccionadaTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func agregarCelda(item: Respuesta){
-            
-            respuestaLB.text = item.texto
-        }
-    
+    func agregarCelda(pregunta: FAQS){
+        texto.text = pregunta.pregunta
+    }
 
 }

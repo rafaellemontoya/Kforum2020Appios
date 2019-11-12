@@ -179,10 +179,14 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as! AgendaTableViewCell
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.white
+        cell.selectedBackgroundView = bgColorView
         cell.agregarCelda(agenda:sectionData[indexPath.section]![indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.itemSeleccionado = sectionData[indexPath.section]![indexPath.row]
         if(sectionData[indexPath.section]![indexPath.row].abre == 1){
              performSegue(withIdentifier: "detalleSG", sender: self)

@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		0519807E236A5D1C006154B6 /* AvisosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519807D236A5D1C006154B6 /* AvisosTableViewCell.swift */; };
 		05198080236A5E55006154B6 /* Aviso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519807F236A5E55006154B6 /* Aviso.swift */; };
-		05198082236A62C3006154B6 /* Descargas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05198081236A62C3006154B6 /* Descargas.swift */; };
 		05198084236A6386006154B6 /* DescargaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05198083236A6386006154B6 /* DescargaTableViewCell.swift */; };
-		05198086236A648F006154B6 /* DescargasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05198085236A648F006154B6 /* DescargasViewController.swift */; };
 		051E8241236A1B9F00A909F3 /* LugarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E8240236A1B9F00A909F3 /* LugarViewController.swift */; };
 		05234B4D2369D91300628C81 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05234B4C2369D91300628C81 /* AgendaTableViewCell.swift */; };
 		05234B4F2369DAED00628C81 /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05234B4E2369DAED00628C81 /* Agenda.swift */; };
@@ -32,24 +30,24 @@
 		058C7C92236B6ABC00B4AAB2 /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058C7C91236B6ABC00B4AAB2 /* SpeakersViewController.swift */; };
 		058C7C94236B6C4F00B4AAB2 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058C7C93236B6C4F00B4AAB2 /* Speaker.swift */; };
 		058C7C96236B718300B4AAB2 /* SpeakerSeleccionadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058C7C95236B718300B4AAB2 /* SpeakerSeleccionadoViewController.swift */; };
-		05929BF1236CA40A006EBBC2 /* PollsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF0236CA40A006EBBC2 /* PollsTableViewCell.swift */; };
-		05929BF3236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF2236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift */; };
-		05929BF5236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF4236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift */; };
 		05929BF7236CA89F006EBBC2 /* Respuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05929BF6236CA89F006EBBC2 /* Respuesta.swift */; };
 		0597628B236E0B1400855253 /* InformacionParticipante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597628A236E0B1400855253 /* InformacionParticipante.swift */; };
-		05AFF382236CFA6700DCFA3D /* QASeleccionadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AFF381236CFA6700DCFA3D /* QASeleccionadaViewController.swift */; };
+		05AF249B2375278A00ADBEAA /* Venue2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF249A2375278A00ADBEAA /* Venue2ViewController.swift */; };
+		05AF249D237532AA00ADBEAA /* FAQSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF249C237532AA00ADBEAA /* FAQSTableViewCell.swift */; };
+		05AF249F2375332A00ADBEAA /* FAQSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF249E2375332A00ADBEAA /* FAQSViewController.swift */; };
+		05AF24A1237533BC00ADBEAA /* FAQS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF24A0237533BC00ADBEAA /* FAQS.swift */; };
+		05AF24A32375371400ADBEAA /* FAQSSeleccionadaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF24A22375371400ADBEAA /* FAQSSeleccionadaViewController.swift */; };
+		05B478E92375450000F4E824 /* Gif+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B478E82375450000F4E824 /* Gif+Image.swift */; };
+		05B478EB2375468100F4E824 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B478EA2375468100F4E824 /* CustomLoader.swift */; };
+		05B478ED237546BC00F4E824 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 05B478EC237546BC00F4E824 /* demo.gif */; };
 		05C32DB8236A4563005E5DE6 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C32DB7236A4563005E5DE6 /* Perfil.swift */; };
 		05C32DBA236A46EC005E5DE6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C32DB9236A46EC005E5DE6 /* PerfilViewController.swift */; };
-		05CEB3E7236C7C800029B2E2 /* PreguntasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CEB3E6236C7C800029B2E2 /* PreguntasTableViewCell.swift */; };
-		05CEB3E9236C7D3B0029B2E2 /* ConferenciaQAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CEB3E8236C7D3B0029B2E2 /* ConferenciaQAP.swift */; };
-		05CEB3ED236C81CD0029B2E2 /* ConferenciaQAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CEB3EC236C81CD0029B2E2 /* ConferenciaQAViewController.swift */; };
 		05D1E9A7236A4C0B001015BD /* PerfilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D1E9A6236A4C0B001015BD /* PerfilTableViewCell.swift */; };
 		05DA23942369107600A60B72 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA23932369107600A60B72 /* Login.swift */; };
 		05DA23962369159A00A60B72 /* Asistente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA23952369159A00A60B72 /* Asistente.swift */; };
 		05DA239C23691C7700A60B72 /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA239B23691C7700A60B72 /* InicioViewController.swift */; };
 		05DA239E23693DBC00A60B72 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA239D23693DBC00A60B72 /* AgendaViewController.swift */; };
 		05E12A37236A078800C31DFF /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E12A36236A078800C31DFF /* SliderCollectionViewCell.swift */; };
-		05E38819236C9D14001AD642 /* ConferenciaPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E38818236C9D13001AD642 /* ConferenciaPollViewController.swift */; };
 		05FD8C60236CAE210065299C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FD8C5F236CAE200065299C /* GoogleService-Info.plist */; };
 		6D54E88A7D9A510AE61BD4F5 /* Pods_K_Forum_2020.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD40F7A1347A59F946F7EFD /* Pods_K_Forum_2020.framework */; };
 /* End PBXBuildFile section */
@@ -57,9 +55,7 @@
 /* Begin PBXFileReference section */
 		0519807D236A5D1C006154B6 /* AvisosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisosTableViewCell.swift; sourceTree = "<group>"; };
 		0519807F236A5E55006154B6 /* Aviso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aviso.swift; sourceTree = "<group>"; };
-		05198081236A62C3006154B6 /* Descargas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descargas.swift; sourceTree = "<group>"; };
 		05198083236A6386006154B6 /* DescargaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescargaTableViewCell.swift; sourceTree = "<group>"; };
-		05198085236A648F006154B6 /* DescargasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescargasViewController.swift; sourceTree = "<group>"; };
 		051E8240236A1B9F00A909F3 /* LugarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugarViewController.swift; sourceTree = "<group>"; };
 		05234B4C2369D91300628C81 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		05234B4E2369DAED00628C81 /* Agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
@@ -82,25 +78,25 @@
 		058C7C91236B6ABC00B4AAB2 /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
 		058C7C93236B6C4F00B4AAB2 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		058C7C95236B718300B4AAB2 /* SpeakerSeleccionadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerSeleccionadoViewController.swift; sourceTree = "<group>"; };
-		05929BF0236CA40A006EBBC2 /* PollsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsTableViewCell.swift; sourceTree = "<group>"; };
-		05929BF2236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollSeleccionadaViewController.swift; sourceTree = "<group>"; };
-		05929BF4236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollSeleccionadaTableViewCell.swift; sourceTree = "<group>"; };
 		05929BF6236CA89F006EBBC2 /* Respuesta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respuesta.swift; sourceTree = "<group>"; };
 		0597628A236E0B1400855253 /* InformacionParticipante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionParticipante.swift; sourceTree = "<group>"; };
 		0597628C236E1B7700855253 /* K-Forum 2020.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "K-Forum 2020.entitlements"; sourceTree = "<group>"; };
-		05AFF381236CFA6700DCFA3D /* QASeleccionadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QASeleccionadaViewController.swift; sourceTree = "<group>"; };
+		05AF249A2375278A00ADBEAA /* Venue2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue2ViewController.swift; sourceTree = "<group>"; };
+		05AF249C237532AA00ADBEAA /* FAQSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSTableViewCell.swift; sourceTree = "<group>"; };
+		05AF249E2375332A00ADBEAA /* FAQSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSViewController.swift; sourceTree = "<group>"; };
+		05AF24A0237533BC00ADBEAA /* FAQS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQS.swift; sourceTree = "<group>"; };
+		05AF24A22375371400ADBEAA /* FAQSSeleccionadaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSSeleccionadaViewController.swift; sourceTree = "<group>"; };
+		05B478E82375450000F4E824 /* Gif+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gif+Image.swift"; sourceTree = "<group>"; };
+		05B478EA2375468100F4E824 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		05B478EC237546BC00F4E824 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		05C32DB7236A4563005E5DE6 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		05C32DB9236A46EC005E5DE6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
-		05CEB3E6236C7C800029B2E2 /* PreguntasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreguntasTableViewCell.swift; sourceTree = "<group>"; };
-		05CEB3E8236C7D3B0029B2E2 /* ConferenciaQAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenciaQAP.swift; sourceTree = "<group>"; };
-		05CEB3EC236C81CD0029B2E2 /* ConferenciaQAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenciaQAViewController.swift; sourceTree = "<group>"; };
 		05D1E9A6236A4C0B001015BD /* PerfilTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilTableViewCell.swift; sourceTree = "<group>"; };
 		05DA23932369107600A60B72 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		05DA23952369159A00A60B72 /* Asistente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asistente.swift; sourceTree = "<group>"; };
 		05DA239B23691C7700A60B72 /* InicioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
 		05DA239D23693DBC00A60B72 /* AgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		05E12A36236A078800C31DFF /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
-		05E38818236C9D13001AD642 /* ConferenciaPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenciaPollViewController.swift; sourceTree = "<group>"; };
 		05FD8C5F236CAE200065299C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8BD40F7A1347A59F946F7EFD /* Pods_K_Forum_2020.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_K_Forum_2020.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6AD064C33C9DC69D259A96 /* Pods-K-Forum 2020.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K-Forum 2020.debug.xcconfig"; path = "Target Support Files/Pods-K-Forum 2020/Pods-K-Forum 2020.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,10 +124,8 @@
 				05D1E9A6236A4C0B001015BD /* PerfilTableViewCell.swift */,
 				0519807D236A5D1C006154B6 /* AvisosTableViewCell.swift */,
 				05198083236A6386006154B6 /* DescargaTableViewCell.swift */,
-				05CEB3E6236C7C800029B2E2 /* PreguntasTableViewCell.swift */,
-				05929BF0236CA40A006EBBC2 /* PollsTableViewCell.swift */,
-				05929BF4236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift */,
 				05659BF92374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift */,
+				05AF249C237532AA00ADBEAA /* FAQSTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -157,19 +151,30 @@
 		0580E3C52367D1AA00A08638 /* K-Forum 2020 */ = {
 			isa = PBXGroup;
 			children = (
+				05B478E7237544D800F4E824 /* GIF Class */,
 				0597628C236E1B7700855253 /* K-Forum 2020.entitlements */,
 				05234B4B2369D8FA00628C81 /* Cells */,
 				05DA239A23691C6500A60B72 /* Views */,
 				05DA23922369105D00A60B72 /* Model */,
 				0580E3C62367D1AA00A08638 /* AppDelegate.swift */,
 				0580E3C82367D1AA00A08638 /* SceneDelegate.swift */,
+				05B478EC237546BC00F4E824 /* demo.gif */,
 				05FD8C5F236CAE200065299C /* GoogleService-Info.plist */,
 				0580E3CC2367D1AA00A08638 /* Main.storyboard */,
 				0580E3CF2367D1AB00A08638 /* Assets.xcassets */,
 				0580E3D12367D1AB00A08638 /* LaunchScreen.storyboard */,
 				0580E3D42367D1AB00A08638 /* Info.plist */,
+				05B478EA2375468100F4E824 /* CustomLoader.swift */,
 			);
 			path = "K-Forum 2020";
+			sourceTree = "<group>";
+		};
+		05B478E7237544D800F4E824 /* GIF Class */ = {
+			isa = PBXGroup;
+			children = (
+				05B478E82375450000F4E824 /* Gif+Image.swift */,
+			);
+			path = "GIF Class";
 			sourceTree = "<group>";
 		};
 		05DA23922369105D00A60B72 /* Model */ = {
@@ -181,12 +186,11 @@
 				053FEABB236A28F300632EB4 /* Menu.swift */,
 				05C32DB7236A4563005E5DE6 /* Perfil.swift */,
 				0519807F236A5E55006154B6 /* Aviso.swift */,
-				05198081236A62C3006154B6 /* Descargas.swift */,
 				058C7C93236B6C4F00B4AAB2 /* Speaker.swift */,
-				05CEB3E8236C7D3B0029B2E2 /* ConferenciaQAP.swift */,
 				05929BF6236CA89F006EBBC2 /* Respuesta.swift */,
 				0597628A236E0B1400855253 /* InformacionParticipante.swift */,
 				05659BFB2374EDD500FD1B09 /* DetalleAgenda.swift */,
+				05AF24A0237533BC00ADBEAA /* FAQS.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,16 +204,14 @@
 				051E8240236A1B9F00A909F3 /* LugarViewController.swift */,
 				053FEABD236A2B1100632EB4 /* MenuViewController.swift */,
 				05C32DB9236A46EC005E5DE6 /* PerfilViewController.swift */,
-				05198085236A648F006154B6 /* DescargasViewController.swift */,
 				058C7C8F236B646800B4AAB2 /* NotificacionesViewController.swift */,
 				058C7C91236B6ABC00B4AAB2 /* SpeakersViewController.swift */,
 				058C7C95236B718300B4AAB2 /* SpeakerSeleccionadoViewController.swift */,
 				053A02D8236B8EE700B3B647 /* ContactoViewController.swift */,
-				05CEB3EC236C81CD0029B2E2 /* ConferenciaQAViewController.swift */,
-				05E38818236C9D13001AD642 /* ConferenciaPollViewController.swift */,
-				05929BF2236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift */,
-				05AFF381236CFA6700DCFA3D /* QASeleccionadaViewController.swift */,
 				05659BFD2374FCBB00FD1B09 /* DetalleAgendaViewController.swift */,
+				05AF249A2375278A00ADBEAA /* Venue2ViewController.swift */,
+				05AF249E2375332A00ADBEAA /* FAQSViewController.swift */,
+				05AF24A22375371400ADBEAA /* FAQSSeleccionadaViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 			files = (
 				0580E3D32367D1AB00A08638 /* LaunchScreen.storyboard in Resources */,
 				05FD8C60236CAE210065299C /* GoogleService-Info.plist in Resources */,
+				05B478ED237546BC00F4E824 /* demo.gif in Resources */,
 				0580E3D02367D1AB00A08638 /* Assets.xcassets in Resources */,
 				0580E3CE2367D1AA00A08638 /* Main.storyboard in Resources */,
 			);
@@ -347,35 +350,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AF249D237532AA00ADBEAA /* FAQSTableViewCell.swift in Sources */,
 				05659BFA2374EBE200FD1B09 /* DetalleAgendaTableViewCell.swift in Sources */,
-				05929BF1236CA40A006EBBC2 /* PollsTableViewCell.swift in Sources */,
 				05C32DB8236A4563005E5DE6 /* Perfil.swift in Sources */,
 				05929BF7236CA89F006EBBC2 /* Respuesta.swift in Sources */,
 				0580E3CB2367D1AA00A08638 /* ViewController.swift in Sources */,
 				051E8241236A1B9F00A909F3 /* LugarViewController.swift in Sources */,
-				05CEB3E7236C7C800029B2E2 /* PreguntasTableViewCell.swift in Sources */,
+				05B478E92375450000F4E824 /* Gif+Image.swift in Sources */,
 				053A02D9236B8EE700B3B647 /* ContactoViewController.swift in Sources */,
 				053FEABA236A27ED00632EB4 /* MenuTableViewCell.swift in Sources */,
 				053FEABE236A2B1100632EB4 /* MenuViewController.swift in Sources */,
 				05234B4F2369DAED00628C81 /* Agenda.swift in Sources */,
 				05C32DBA236A46EC005E5DE6 /* PerfilViewController.swift in Sources */,
 				058C7C94236B6C4F00B4AAB2 /* Speaker.swift in Sources */,
-				05929BF3236CA6E6006EBBC2 /* PollSeleccionadaViewController.swift in Sources */,
+				05AF249B2375278A00ADBEAA /* Venue2ViewController.swift in Sources */,
+				05AF24A32375371400ADBEAA /* FAQSSeleccionadaViewController.swift in Sources */,
 				05DA239C23691C7700A60B72 /* InicioViewController.swift in Sources */,
 				0580E3C72367D1AA00A08638 /* AppDelegate.swift in Sources */,
-				05E38819236C9D14001AD642 /* ConferenciaPollViewController.swift in Sources */,
 				05659BFC2374EDD500FD1B09 /* DetalleAgenda.swift in Sources */,
 				05659BFE2374FCBB00FD1B09 /* DetalleAgendaViewController.swift in Sources */,
 				05DA23962369159A00A60B72 /* Asistente.swift in Sources */,
-				05198086236A648F006154B6 /* DescargasViewController.swift in Sources */,
-				05CEB3E9236C7D3B0029B2E2 /* ConferenciaQAP.swift in Sources */,
 				058C7C90236B646800B4AAB2 /* NotificacionesViewController.swift in Sources */,
-				05929BF5236CA7E7006EBBC2 /* PollSeleccionadaTableViewCell.swift in Sources */,
-				05CEB3ED236C81CD0029B2E2 /* ConferenciaQAViewController.swift in Sources */,
 				058C7C92236B6ABC00B4AAB2 /* SpeakersViewController.swift in Sources */,
+				05AF24A1237533BC00ADBEAA /* FAQS.swift in Sources */,
 				05E12A37236A078800C31DFF /* SliderCollectionViewCell.swift in Sources */,
 				05198084236A6386006154B6 /* DescargaTableViewCell.swift in Sources */,
-				05AFF382236CFA6700DCFA3D /* QASeleccionadaViewController.swift in Sources */,
+				05B478EB2375468100F4E824 /* CustomLoader.swift in Sources */,
+				05AF249F2375332A00ADBEAA /* FAQSViewController.swift in Sources */,
 				05198080236A5E55006154B6 /* Aviso.swift in Sources */,
 				058C7C96236B718300B4AAB2 /* SpeakerSeleccionadoViewController.swift in Sources */,
 				0580E3C92367D1AA00A08638 /* SceneDelegate.swift in Sources */,
@@ -386,7 +387,6 @@
 				05DA23942369107600A60B72 /* Login.swift in Sources */,
 				05D1E9A7236A4C0B001015BD /* PerfilTableViewCell.swift in Sources */,
 				05234B4D2369D91300628C81 /* AgendaTableViewCell.swift in Sources */,
-				05198082236A62C3006154B6 /* Descargas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,7 +534,7 @@
 				CODE_SIGN_ENTITLEMENTS = "K-Forum 2020/K-Forum 2020.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 5L2FG34SQ6;
 				INFOPLIST_FILE = "K-Forum 2020/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -542,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.administra.kforum2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -559,7 +559,7 @@
 				CODE_SIGN_ENTITLEMENTS = "K-Forum 2020/K-Forum 2020.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 5L2FG34SQ6;
 				INFOPLIST_FILE = "K-Forum 2020/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -567,7 +567,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.administra.kforum2020;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

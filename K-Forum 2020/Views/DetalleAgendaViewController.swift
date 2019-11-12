@@ -82,6 +82,9 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = self.tabla.dequeueReusableCell(withIdentifier: "cell") as! DetalleAgendaTableViewCell
     cell.agregarCelda(item: array[indexPath.row])
+    let bgColorView = UIView()
+    bgColorView.backgroundColor = UIColor.white
+    cell.selectedBackgroundView = bgColorView
     return cell
 }
 

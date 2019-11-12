@@ -26,6 +26,7 @@ class NotificacionesViewController: UIViewController {
         
         tabla.delegate = self
         tabla.dataSource = self
+        tabla.backgroundColor = UIColor.white
         getInfoAvisos()
         // Do any additional setup after loading the view.
     }
@@ -39,12 +40,16 @@ class NotificacionesViewController: UIViewController {
              }else{
                  self.array=[]
                  for document in querySnapshot!.documents{
+                    if(document.data()["estatus"]as? Int == 1){
                      let seleccionado = Aviso()
                     seleccionado.id = document.documentID
                      
                      if let texto = document.data()["texto"]as? String{
                          seleccionado.texto = texto
                      }
+                    if let hora = document.data()["fecha"]as? String{
+                        seleccionado.hora = hora
+                    }
                      if let url = document.data()["url"]as? String{
                          seleccionado.url = url
                      }
@@ -55,7 +60,8 @@ class NotificacionesViewController: UIViewController {
                     
                      
                     self.array.append(seleccionado)
-                 }
+                    }//if
+                 }//for
                 self.tabla.reloadData()
                  
              }
@@ -75,6 +81,9 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = self.tabla.dequeueReusableCell(withIdentifier: "cell") as! AvisosTableViewCell
     cell.agregarCelda(item: array[indexPath.row])
+    let bgColorView = UIView()
+    bgColorView.backgroundColor = UIColor.white
+    cell.selectedBackgroundView = bgColorView
     return cell
 }
 

@@ -12,7 +12,8 @@ class AvisosTableViewCell: UITableViewCell {
     
     @IBOutlet weak var texto: UILabel!
     
-
+    @IBOutlet weak var hora: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,7 +26,7 @@ class AvisosTableViewCell: UITableViewCell {
     }
     func agregarCelda(item: Aviso){
         self.texto.text = item.texto
-        
+        self.hora.text = item.hora
         
     }
 
