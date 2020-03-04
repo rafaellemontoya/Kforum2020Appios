@@ -32,7 +32,12 @@ class ContactoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nombreTF.attributedPlaceholder = NSAttributedString(string: "Name",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        emailTF.attributedPlaceholder = NSAttributedString(string: "Email",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        mensajeTF.text = "Message"
+        
         // Do any additional setup after loading the view.
     }
     

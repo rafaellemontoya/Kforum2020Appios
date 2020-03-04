@@ -23,7 +23,7 @@ class MenuViewController: UIViewController {
         
         tabla.delegate = self
         tabla.dataSource = self
-        
+        tabla.backgroundColor = UIColor.white
         Firestore.firestore().settings = FirestoreSettings()
                // [END setup]
                db = Firestore.firestore()
